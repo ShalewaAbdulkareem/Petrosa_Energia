@@ -9,6 +9,10 @@ def about(request):
 
 def services(request):
     return render(request, 'services.html')
+def products(request):
+    return render(request, 'products.html')
+def cables(request):
+    return render(request, 'cables.html')
 
 def blog(request):
     return render(request, 'blog.html')
