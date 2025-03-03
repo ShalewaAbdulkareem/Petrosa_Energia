@@ -38,3 +38,5 @@ def contact(request):
 
 def project(request):
     return render(request, 'project.html')
+def project_details(request):
+    return render(request, 'project_details.html')
