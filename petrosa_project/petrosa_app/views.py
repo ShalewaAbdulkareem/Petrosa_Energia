@@ -21,8 +21,8 @@ def drives(request):
     return render(request, 'drives.html')
 def kv_panels(request):
     return render(request, 'kv_panels.html')
-def led_lights(request):
-    return render(request, 'led_lights.html')
+def led_light(request):
+    return render(request, 'led_light.html')
 def spare_part(request):
     return render(request,'spare_part.html')
 def transformer(request):
