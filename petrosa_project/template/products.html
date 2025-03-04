@@ -44,7 +44,7 @@ Products Page
             </div>
             
     <!-- service_area_start  -->
-    <!-- <div class="service_area add_padding">
+     <div class="service_area add_padding">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-lg-4">
@@ -140,10 +140,10 @@ Products Page
             </div>
 
         </div>
-    </div> -->
+    </div> 
     <!-- service_area_end  -->
     <!-- chose_us_area start -->
-    <!-- <div class="chose_us_area chose_bg_1">
+    <div class="chose_us_area chose_bg_1">
         <div class="container">
             <div class="row justify-content-end">
                 <div class="col-lg-6 col-md-8">
@@ -164,11 +164,12 @@ Products Page
                 </div>
             </div>
         </div>
-    </div>
-    <!-- chose_us_area end -->
-    <!-- <div class="testimonial_area ">
+    </div> 
+    <!-- choose_us_area end -->
+    <div class="testimonial_area ">
             <div class="container">
                 <div class="row">
+                    {% for product in products %}
                     <div class="col-xl-12">
                             <div class="section_title text-center mb-55">
                                     <h3>Testimonials</h3>
@@ -186,13 +187,13 @@ Products Page
                                 </div>
                             </div>
                         </div>
-                        {% endfor %}
                         
                     </div>
+                    {% endfor %}
                 </div>
               
             </div>
-        </div> -->
+        </div>
     <!-- contact_us_start  -->
     <div class="contact_us overlay">
         <div class="container">
