@@ -19,30 +19,32 @@ Products Page
 </div>
 <!--/ bradcam_area  -->
 
-<!-- product_area-START -->
-<div class="product-section mt-150 mb-150">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12 col-md-12">
-        <div class="product-filters">
-            <ul>
-                <li class="active" data-filters="*">All</li>
-                <li data-filter="generators">Generators</li>
-                <li data-filter="drives">AC/DC Drives</li>
-                <li data-filter="33kv">33KV/11KV panels</li>
-                <li data-filter="transformers">Transformers & R.M.U</li>
-                <li data-filter="cables">Power & Control cables</li>
-                <li data-filter="genuine">Genuine Spare parts</li>
-                <li data-filter="led">LED Lights & Fittings</li>
-                <li data-filter="abb">ABB & SCHNEIDER Products</li>
-            </ul>
-        </div>
-      </div>
-    </div>
-  </div>
+        <!-- product_area-START -->
+        <div class="gallery_area add_padding">
+            <div class="container">
+                <div class="gallery_nav">
+                    <div class="row align-items-center">
+                        <div class="col-lg-12 col-md-12">
+                            <div class="portfolio-menu mb-50 text-center">
+                                <button class="active" data-filter="*">All</button>
+                                <button data-filter=".cat1">Generators</button>
+                                <button data-filter=".cat2">Electrical panels</button>
+                                <button data-filter=".cat3">AC/DC Drives</button>
+                                <button data-filter=".cat3">33KV/11KV panels</button>
+                                <button data-filter=".cat3">Transformers & R.M.U</button>
+                                <button data-filter=".cat3">Power & Control cables</button>
+                                <button data-filter=".cat3">Genuine Spare parts</button>
+                                <button data-filter=".cat3">LED Lights & Fittings</button>
+                                <button data-filter=".cat3">ABB & SCHNEIDER Products</button>
 
-  <!-- service_area_start  -->
-  <!-- <div class="service_area add_padding">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+    <!-- service_area_start  -->
+    <!-- <div class="service_area add_padding">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-lg-4">
@@ -139,9 +141,9 @@ Products Page
 
         </div>
     </div> -->
-  <!-- service_area_end  -->
-  <!-- chose_us_area start -->
-  <!-- <div class="chose_us_area chose_bg_1">
+    <!-- service_area_end  -->
+    <!-- chose_us_area start -->
+    <!-- <div class="chose_us_area chose_bg_1">
         <div class="container">
             <div class="row justify-content-end">
                 <div class="col-lg-6 col-md-8">
@@ -164,83 +166,50 @@ Products Page
         </div>
     </div>
     <!-- chose_us_area end -->
-  <!-- <div class="testimonial_area ">
+    <!-- <div class="testimonial_area ">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-12">
                             <div class="section_title text-center mb-55">
                                     <h3>Testimonials</h3>
                                 </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xl-12">
-                        <div class="testmonial_active owl-carousel">
-                            <div class="single_carousel">
-                                <div class="single_testmonial text-center">
-                                    <div class="testmonial_author">
-                                        <div class="thumb">
-                                            <img src="{% static 'img/testimonial/1.png' %}" alt="">
+                                <div class="gallery_hover">
+                                    <div class="hover_inner d-flex align-items-center justify-content-between">
+                                        <h3>{{ product.product_name }}</h3>
+                                        <p>{{ product.price }}</p>
+                                        <div class="icon">
+                                            <a href="{% url 'petrosa_app:product_detail' slug=product.slug %}">
+                                                <i class="ti-angle-right"></i>
+                                            </a>
                                         </div>
-                                        <h4>Jordan Adams</h4>
-                                        <span>Client</span>
                                     </div>
-                                    <p>“Our program is guided by the developmental milestones which embrace <br>
-                                        the six most important learning domains in education”</p>
-                                </div>
-                            </div>
-                            <div class="single_carousel">
-                                <div class="single_testmonial text-center">
-                                    <div class="testmonial_author">
-                                        <div class="thumb">
-                                            <img src="{% static 'img/testimonial/1.png' %}" alt="">
-                                        </div>
-                                        <h4>Jordan Adams</h4>
-                                        <span>Client</span>
-                                    </div>
-                                    <p>“Our program is guided by the developmental milestones which embrace <br>
-                                        the six most important learning domains in education”</p>
-                                </div>
-                            </div>
-                            <div class="single_carousel">
-                                <div class="single_testmonial text-center">
-                                    <div class="testmonial_author">
-                                        <div class="thumb">
-                                            <img src="{% static 'img/testimonial/1.png' %}" alt="">
-                                        </div>
-                                        <h4>Jordan Adams</h4>
-                                        <span>Client</span>
-                                    </div>
-                                    <p>“Our program is guided by the developmental milestones which embrace <br>
-                                        the six most important learning domains in education”</p>
                                 </div>
                             </div>
                         </div>
+                        {% endfor %}
+                        
+                    </div>
+                </div>
+              
+            </div>
+        </div> -->
+    <!-- contact_us_start  -->
+    <div class="contact_us overlay">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 col-md-7">
+                    <div class="contact_text">
+                        <h3>Looking for Reliable Power Solutions and Electrical Services?</h3>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-5">
+                    <div class="contact_btn">
+                        <a class="boxed-btn3" href="{% url 'petrosa_app:contact' %}">Contact Us</a>
                     </div>
                 </div>
             </div>
-        </div> -->
-  <!-- contact_us_start  -->
-  <div class="contact_us overlay">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-8 col-md-7">
-          <div class="contact_text">
-            <h3>
-              Looking for Reliable Power Solutions and Electrical Services?
-            </h3>
-          </div>
         </div>
-        <div class="col-lg-4 col-md-5">
-          <div class="contact_btn">
-            <a class="boxed-btn3" href="{% url 'petrosa_app:contact' %}"
-              >Contact Us</a
-            >
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
-  <!-- contact_us_end -->
-  {% endblock %}
-</div>
+    <!-- contact_us_end -->
+{% endblock %}
+    
