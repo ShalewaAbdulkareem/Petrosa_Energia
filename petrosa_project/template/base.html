@@ -112,25 +112,27 @@
                                 <div class="main-menu  d-none d-lg-block">
                                     <nav>
                                         <ul id="navigation">
-                                            <li><a class="active" href="{% url 'petrosa_app:index' %}">home</a></li>
-                                            <li><a href="{% url 'petrosa_app:about' %}">About</a></li>
-                                            <li><a href="{% url 'petrosa_app:services' %}">Services</a></li>
-                                            <li><a href="{% url 'petrosa_app:products' %}">Products</a></li>
-                                            <li><a href="#">Project <i class="ti-angle-down"></i></a>
+                                            <li><a href="{% url 'petrosa_app:index' %}" class="{% if request.resolver_match.url_name == 'index' %}active{% endif %}">Home</a></li>
+                                            <li><a href="{% url 'petrosa_app:about' %}" class="{% if request.resolver_match.url_name == 'about' %}active{% endif %}">About</a></li>
+                                            <li><a href="{% url 'petrosa_app:services' %}" class="{% if request.resolver_match.url_name == 'services' %}active{% endif %}">Services</a></li>
+                                            <li><a href="{% url 'petrosa_app:products' %}" class="{% if request.resolver_match.url_name == 'products' %}active{% endif %}">Products</a></li>
+                                            <li>
+                                                <a href="#" class="{% if request.resolver_match.url_name in 'project project_details' %}active{% endif %}">Project <i class="ti-angle-down"></i></a>
                                                 <ul class="submenu">
-                                                    <li><a href="{% url 'petrosa_app:project' %}">project</a></li>
-                                                    <!-- <li><a href="elements.html">elements</a></li> -->
-                                                    <li><a href="project_details.html">project details</a></li>
+                                                    <li><a href="{% url 'petrosa_app:project' %}" class="{% if request.resolver_match.url_name == 'project' %}active{% endif %}">Project</a></li>
+                                                    <li><a href="project_details.html" class="{% if request.resolver_match.url_name == 'project_details' %}active{% endif %}">Project Details</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a href="#">blog <i class="ti-angle-down"></i></a>
+                                            <li>
+                                                <a href="#" class="{% if request.resolver_match.url_name in 'blog single_blog' %}active{% endif %}">Blog <i class="ti-angle-down"></i></a>
                                                 <ul class="submenu">
-                                                    <li><a href="blog.html">blog</a></li>
-                                                    <li><a href="single-blog.html">single-blog</a></li>
+                                                    <li><a href="blog.html" class="{% if request.resolver_match.url_name == 'blog' %}active{% endif %}">Blog</a></li>
+                                                    <li><a href="single-blog.html" class="{% if request.resolver_match.url_name == 'single_blog' %}active{% endif %}">Single Blog</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a href="{% url 'petrosa_app:contact' %}">Contact</a></li>
+                                            <li><a href="{% url 'petrosa_app:contact' %}" class="{% if request.resolver_match.url_name == 'contact' %}active{% endif %}">Contact</a></li>
                                         </ul>
+                                        
                                     </nav>
                                 </div>
                             </div>
@@ -171,11 +173,7 @@
                                                 </a>
                                             </div>
                                 </div>
-                                <div class="col-lg-6 col-md-6">
-                                    <div class="download_btn">
-                                        <a href="#"> <img src="{% static 'img/icon/down.svg' %}" alt=""> Download Brochure</a>
-                                    </div>
-                                </div>
+                               
                             </div>
                 </div>
                 
