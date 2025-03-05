@@ -12,7 +12,9 @@ def about(request):
     return render(request, 'about.html')
 
 def services(request):
-    return render(request, 'services.html')
+    services = Service.objects.all()
+    context = {'services': services}
+    return render(request, 'services.html', context)
 def products(request, category_slug=None):
     categories = Category.objects.all()
     if category_slug:
@@ -46,8 +48,11 @@ def blog(request):
 def contact(request):
     return render(request, 'contact.html')
 
+
 def project(request):
-    return render(request, 'project.html')
+    projects = Project.objects.all() 
+    return render(request, 'project.html', {'projects': projects})
+
 
 def project_details(request):
     return render(request, 'project_details.html')

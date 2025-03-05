@@ -116,13 +116,15 @@
                                             <li><a href="{% url 'petrosa_app:about' %}" class="{% if request.resolver_match.url_name == 'about' %}active{% endif %}">About</a></li>
                                             <li><a href="{% url 'petrosa_app:services' %}" class="{% if request.resolver_match.url_name == 'services' %}active{% endif %}">Services</a></li>
                                             <li><a href="{% url 'petrosa_app:products' %}" class="{% if request.resolver_match.url_name == 'products' %}active{% endif %}">Products</a></li>
-                                            <li>
+                                            <li><a href="{% url 'petrosa_app:project' %}" class="{% if request.resolver_match.url_name == 'project' %}active{% endif %}">Project</a></li>
+
+                                            <!-- <li>
                                                 <a href="#" class="{% if request.resolver_match.url_name in 'project project_details' %}active{% endif %}">Project <i class="ti-angle-down"></i></a>
                                                 <ul class="submenu">
                                                     <li><a href="{% url 'petrosa_app:project' %}" class="{% if request.resolver_match.url_name == 'project' %}active{% endif %}">Project</a></li>
                                                     <li><a href="project_details.html" class="{% if request.resolver_match.url_name == 'project_details' %}active{% endif %}">Project Details</a></li>
                                                 </ul>
-                                            </li>
+                                            </li> -->
                                             <li>
                                                 <a href="#" class="{% if request.resolver_match.url_name in 'blog single_blog' %}active{% endif %}">Blog <i class="ti-angle-down"></i></a>
                                                 <ul class="submenu">
@@ -166,13 +168,13 @@
             <div class="container">
                 <div class="bordered_1px">
                         <div class="row">
-                                <div class="col-lg-6 col-md-6">
+                                <!-- <div class="col-lg-6 col-md-6">
                                         <div class="footer_logo">
                                                 <a href="#">
                                                     <img src="{% static 'img/footer_logo.png' %}'" alt="">
                                                 </a>
                                             </div>
-                                </div>
+                                </div> -->
                                
                             </div>
                 </div>

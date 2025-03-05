@@ -54,3 +54,14 @@ class ProductInterest(models.Model):
 
     def __str__(self):
         return f"Interest in {self.product.product_name} by {self.name}"
+
+class Service(models.Model):
+    title = models.CharField(max_length=100)
+    image = models.ImageField(upload_to='services_images/')  # Change "ImageField" to "image"
+    content = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.title
+
