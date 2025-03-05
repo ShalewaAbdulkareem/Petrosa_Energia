@@ -8,12 +8,12 @@
 
 {% block content %}
     <!-- bradcam_area  -->
-    <div class="bradcam_area bradcam_bg_2 mt-5">
+    <div class="bradcam_area bradcam_bg_2">
         <div class="container">
             <div class="row">
                 <div class="col-xl-12">
                     <div class="bradcam_text text-center">
-                        <h3>Our Services</h3>
+                        <h3>Services</h3>
                         <p><a href="index.html">Home</a> / Services</p>
                     </div>
                 </div>
@@ -25,29 +25,103 @@
     <!-- service_area_start  -->
     <div class="service_area add_padding">
         <div class="container">
-            <h1>COMMITTED TO EXCELLENCE</h1>
+            <h1>Commited to excellence</h1>
             <p>At Petrosa Energia Ltd, we are dedication to delivering exceptional results on every projects.
                 Our team combine expertise, reliability and professionalism to provide top-notch solutions.
                 You can trust us to exceed your expectations and deliver value every step away.
             </p>
             <div class="row">
-                {% for services in services %}
                 <div class="col-md-6 col-lg-4">
                     <div class="single_service">
                         <div class="thumb">
-                            <img src="{{services.image.url}}" alt="">
+                            <img src="{% static 'img/service/1.png' %}" alt="">
                         </div>
                         <div class="service_info">
                             <a href="#">
-                                <h3>{{services.title}} </h3>
+                                <h3>maintenance & Repair </h3>
                             </a>
-                            <p>{{services.content}}</p>
-                            <!-- <a class="d-flex align-items-center" href="#">More <i class="ti-angle-right"></i> -->
+                            <p>There are many variations of passages of lorem Ipsum available.</p>
+                            <a class="d-flex align-items-center" href="#">More <i class="ti-angle-right"></i>
                             </a>
                         </div>
                     </div>
                 </div>
-                {% endfor %}
+                <div class="col-md-6 col-lg-4">
+                    <div class="single_service">
+                        <div class="thumb">
+                            <img src="{% static 'img/service/2.png' %}" alt="">
+                        </div>
+                        <div class="service_info">
+                            <a href="#">
+                                <h3>Building Construction </h3>
+                            </a>
+                            <p>There are many variations of passages of lorem Ipsum available.</p>
+                            <a class="d-flex align-items-center" href="#">More <i class="ti-angle-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="single_service">
+                        <div class="thumb">
+                            <img src="{% static 'img/service/3.png' %}" alt="">
+                        </div>
+                        <div class="service_info">
+                            <a href="#">
+                                <h3>Bridge & Road Construction</h3>
+                            </a>
+                            <p>There are many variations of passages of lorem Ipsum available.</p>
+                            <a class="d-flex align-items-center" href="#">More <i class="ti-angle-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="single_service">
+                        <div class="thumb">
+                            <img src="{% static 'img/service/4.png' %}" alt="">
+                        </div>
+                        <div class="service_info">
+                            <a href="#">
+                                <h3>maintenance & Repair </h3>
+                            </a>
+                            <p>There are many variations of passages of lorem Ipsum available.</p>
+                            <a class="d-flex align-items-center" href="#">More <i class="ti-angle-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="single_service">
+                        <div class="thumb">
+                            <img src="{% static 'img/service/5.png' %}" alt="">
+                        </div>
+                        <div class="service_info">
+                            <a href="#">
+                                <h3>Building Construction </h3>
+                            </a>
+                            <p>There are many variations of passages of lorem Ipsum available.</p>
+                            <a class="d-flex align-items-center" href="#">More <i class="ti-angle-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="single_service">
+                        <div class="thumb">
+                            <img src="{% static 'img/service/6.png' %}" alt="">
+                        </div>
+                        <div class="service_info">
+                            <a href="#">
+                                <h3>Bridge & Road Construction</h3>
+                            </a>
+                            <p>There are many variations of passages of lorem Ipsum available.</p>
+                            <a class="d-flex align-items-center" href="#">More <i class="ti-angle-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         </div>
     </div>

@@ -112,16 +112,6 @@
                                 <div class="main-menu  d-none d-lg-block">
                                     <nav>
                                         <ul id="navigation">
-<<<<<<< HEAD
-                                            <li><a href="{% url 'petrosa_app:index' %}" class="{% if request.resolver_match.url_name == 'index' %}active{% endif %}">Home</a></li>
-                                            <li><a href="{% url 'petrosa_app:about' %}" class="{% if request.resolver_match.url_name == 'about' %}active{% endif %}">About</a></li>
-                                            <li><a href="{% url 'petrosa_app:services' %}" class="{% if request.resolver_match.url_name == 'services' %}active{% endif %}">Services</a></li>
-                                            <li><a href="{% url 'petrosa_app:products' %}" class="{% if request.resolver_match.url_name == 'products' %}active{% endif %}">Products</a></li>
-                                            <li><a href="{% url 'petrosa_app:project' %}" class="{% if request.resolver_match.url_name == 'project' %}active{% endif %}">Project</a></li>
-
-                                            <!-- <li>
-                                                <a href="#" class="{% if request.resolver_match.url_name in 'project project_details' %}active{% endif %}">Project <i class="ti-angle-down"></i></a>
-=======
                                             <li><a href="{% url 'petrosa_app:index' %}"
                                                     class="{% if request.resolver_match.url_name == 'index' %}active{% endif %}">Home</a>
                                             </li>
@@ -133,7 +123,6 @@
                                             </li>
                                             <li class="menu-item-has-children">
                                                 <a href="#" class="{% if request.resolver_match.url_name in 'products ' %}active{% endif %}">Products <i class="ti-angle-down"></i></a>
->>>>>>> f43c0dd27787d3e800c7280041741eb39364e500
                                                 <ul class="submenu">
                                                     {% for category in categories %}
                                                     <li class="menu-item-has-children">
@@ -162,7 +151,7 @@
                                                             class="{% if request.resolver_match.url_name == 'project_details' %}active{% endif %}">Project
                                                             Details</a></li>
                                                 </ul>
-                                            </li> -->
+                                            </li>
                                             <li>
                                                 <a href="#"
                                                     class="{% if request.resolver_match.url_name in 'blog single_blog' %}active{% endif %}">Blog

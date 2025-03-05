@@ -12,9 +12,7 @@ def about(request):
     return render(request, 'about.html')
 
 def services(request):
-    services = Service.objects.all()
-    context = {'services': services}
-    return render(request, 'services.html', context)
+    return render(request, 'services.html')
 def products(request, category_slug=None):
     categories = Category.objects.all()
     if category_slug:
