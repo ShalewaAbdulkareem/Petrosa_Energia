@@ -4,9 +4,10 @@ from django.urls import reverse
 from django.utils import timezone
 
 class Category(models.Model):
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=255)
     slug = models.SlugField(unique=True)
-    
+    parent = models.ForeignKey('self', on_delete=models.CASCADE, null=True, blank=True, related_name='subcategories')
+
     def __str__(self):
         return self.name
 
@@ -14,7 +15,6 @@ class Product(models.Model):
     category = models.ForeignKey(Category, related_name='products', on_delete=models.CASCADE)
     product_name = models.CharField(max_length=200, verbose_name='Product Name')
     slug = models.SlugField(max_length=300)
-    price = models.DecimalField(max_digits=10, decimal_places=2)
     image = models.ImageField(upload_to='product_images/')
     in_stock = models.BooleanField(default=True)
     content = HTMLField()

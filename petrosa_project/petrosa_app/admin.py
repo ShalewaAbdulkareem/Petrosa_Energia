@@ -2,7 +2,7 @@ from django.contrib import admin
 from petrosa_app.models import *
 
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = ('name', 'slug') 
+    list_display = ('name', 'slug', 'parent') 
     prepopulated_fields = {'slug': ('name',)}
     search_fields = ('name',) 
     list_filter = ('name',)  
@@ -10,7 +10,7 @@ class CategoryAdmin(admin.ModelAdmin):
 admin.site.register(Category, CategoryAdmin)
 
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ('product_name', 'category', 'price', 'in_stock', 'created_at')  
+    list_display = ('product_name', 'category',  'in_stock', 'created_at')  
     list_filter = ('category', 'in_stock')  
     search_fields = ('product_name', 'category__name')  
     prepopulated_fields = {'slug': ('product_name',)}  

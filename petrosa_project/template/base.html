@@ -13,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- <link rel="manifest" href="site.webmanifest"> -->
-    <link rel="shortcut icon" type="image/x-icon" href="{% static 'img/favicon.png' %}">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'img/petrosa.png' %}">
     <!-- Place favicon.ico in the root directory -->
 
     <!-- CSS here -->
@@ -32,7 +32,7 @@
 </head>
 
 <body>
-  
+
     <!-- header-start -->
     <header>
         <div class="header-area ">
@@ -112,6 +112,7 @@
                                 <div class="main-menu  d-none d-lg-block">
                                     <nav>
                                         <ul id="navigation">
+<<<<<<< HEAD
                                             <li><a href="{% url 'petrosa_app:index' %}" class="{% if request.resolver_match.url_name == 'index' %}active{% endif %}">Home</a></li>
                                             <li><a href="{% url 'petrosa_app:about' %}" class="{% if request.resolver_match.url_name == 'about' %}active{% endif %}">About</a></li>
                                             <li><a href="{% url 'petrosa_app:services' %}" class="{% if request.resolver_match.url_name == 'services' %}active{% endif %}">Services</a></li>
@@ -120,21 +121,66 @@
 
                                             <!-- <li>
                                                 <a href="#" class="{% if request.resolver_match.url_name in 'project project_details' %}active{% endif %}">Project <i class="ti-angle-down"></i></a>
+=======
+                                            <li><a href="{% url 'petrosa_app:index' %}"
+                                                    class="{% if request.resolver_match.url_name == 'index' %}active{% endif %}">Home</a>
+                                            </li>
+                                            <li><a href="{% url 'petrosa_app:about' %}"
+                                                    class="{% if request.resolver_match.url_name == 'about' %}active{% endif %}">About</a>
+                                            </li>
+                                            <li><a href="{% url 'petrosa_app:services' %}"
+                                                    class="{% if request.resolver_match.url_name == 'services' %}active{% endif %}">Services</a>
+                                            </li>
+                                            <li class="menu-item-has-children">
+                                                <a href="#" class="{% if request.resolver_match.url_name in 'products ' %}active{% endif %}">Products <i class="ti-angle-down"></i></a>
+>>>>>>> f43c0dd27787d3e800c7280041741eb39364e500
                                                 <ul class="submenu">
-                                                    <li><a href="{% url 'petrosa_app:project' %}" class="{% if request.resolver_match.url_name == 'project' %}active{% endif %}">Project</a></li>
-                                                    <li><a href="project_details.html" class="{% if request.resolver_match.url_name == 'project_details' %}active{% endif %}">Project Details</a></li>
+                                                    {% for category in categories %}
+                                                    <li class="menu-item-has-children">
+                                                        <a href="{% url 'petrosa_app:products' category_slug=category.slug %}">{{ category.name }} <i class="ti-angle-right"></i></a>
+                                                        {% if category.subcategories.all %}
+                                                        <ul class="submenu">
+                                                            {% for subcategory in category.subcategories.all %}
+                                                            <li><a href="{% url 'petrosa_app:subcategory' subcategory.slug %}">{{ subcategory.name }}</a></li>
+                                                            {% endfor %}
+                                                        </ul>
+                                                        {% endif %}
+                                                    </li>
+                                                    {% endfor %}
+                                                </ul>
+                                            </li>
+                                            
+                                            <li>
+                                                <a href="#"
+                                                    class="{% if request.resolver_match.url_name in 'project project_details' %}active{% endif %}">Project
+                                                    <i class="ti-angle-down"></i></a>
+                                                <ul class="submenu">
+                                                    <li><a href="{% url 'petrosa_app:project' %}"
+                                                            class="{% if request.resolver_match.url_name == 'project' %}active{% endif %}">Project</a>
+                                                    </li>
+                                                    <li><a href="project_details.html"
+                                                            class="{% if request.resolver_match.url_name == 'project_details' %}active{% endif %}">Project
+                                                            Details</a></li>
                                                 </ul>
                                             </li> -->
                                             <li>
-                                                <a href="#" class="{% if request.resolver_match.url_name in 'blog single_blog' %}active{% endif %}">Blog <i class="ti-angle-down"></i></a>
+                                                <a href="#"
+                                                    class="{% if request.resolver_match.url_name in 'blog single_blog' %}active{% endif %}">Blog
+                                                    <i class="ti-angle-down"></i></a>
                                                 <ul class="submenu">
-                                                    <li><a href="blog.html" class="{% if request.resolver_match.url_name == 'blog' %}active{% endif %}">Blog</a></li>
-                                                    <li><a href="single-blog.html" class="{% if request.resolver_match.url_name == 'single_blog' %}active{% endif %}">Single Blog</a></li>
+                                                    <li><a href="blog.html"
+                                                            class="{% if request.resolver_match.url_name == 'blog' %}active{% endif %}">Blog</a>
+                                                    </li>
+                                                    <li><a href="single-blog.html"
+                                                            class="{% if request.resolver_match.url_name == 'single_blog' %}active{% endif %}">Single
+                                                            Blog</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a href="{% url 'petrosa_app:contact' %}" class="{% if request.resolver_match.url_name == 'contact' %}active{% endif %}">Contact</a></li>
+                                            <li><a href="{% url 'petrosa_app:contact' %}"
+                                                    class="{% if request.resolver_match.url_name == 'contact' %}active{% endif %}">Contact</a>
+                                            </li>
                                         </ul>
-                                        
+
                                     </nav>
                                 </div>
                             </div>
@@ -167,6 +213,7 @@
         <div class="download_brochure">
             <div class="container">
                 <div class="bordered_1px">
+<<<<<<< HEAD
                         <div class="row">
                                 <!-- <div class="col-lg-6 col-md-6">
                                         <div class="footer_logo">
@@ -176,9 +223,26 @@
                                             </div>
                                 </div> -->
                                
+=======
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6">
+                            <div class="footer_logo">
+                                    <img src="{% static 'img/petrosa.png' %}" class="img-fluid w-25" alt="">
+                                    <img src="{% static 'img/energia.png' %}" alt="">
+                                </a>
+>>>>>>> f43c0dd27787d3e800c7280041741eb39364e500
                             </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            <div class="download_btn">
+                                    <a href="#"> <img src="{% static 'img/icon/down.svg' %}" alt=""> Download Brochure</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    </div>
                 </div>
-                
+
             </div>
         </div>
         <div class="footer_top">
@@ -233,7 +297,7 @@
                     <div class="col-xl-2 col-md-6 col-lg-2">
                         <div class="footer_widget">
                             <h3 class="footer_title">
-                                    Popular Searches
+                                Popular Searches
                             </h3>
                             <ul>
                                 <li><a href="#">Recent Projects </a></li>
@@ -279,8 +343,11 @@
                     <div class="col-xl-12">
                         <p class="copy_right text-center">
                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            Copyright &copy;
+                            <script>document.write(new Date().getFullYear());</script> All rights reserved | This
+                            template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a
+                                href="https://colorlib.com" target="_blank">Colorlib</a>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                         </p>
                     </div>
                 </div>
@@ -321,19 +388,20 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
     <script src="{% static 'js/main.js' %}"></script>
 
-    
-  
-  <!-- Modal -->
-  <div class="modal fade custom_search_pop" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+
+
+    <!-- Modal -->
+    <div class="modal fade custom_search_pop" id="exampleModalCenter" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="serch_form">
-                <input type="text" placeholder="search" >
-                <button type="submit">search</button>
+            <div class="modal-content">
+                <div class="serch_form">
+                    <input type="text" placeholder="search">
+                    <button type="submit">search</button>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
+    </div>
     <script>
         $('#datepicker').datepicker({
             iconsLibrary: 'fontawesome',

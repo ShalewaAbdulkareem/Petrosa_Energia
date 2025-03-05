@@ -6,8 +6,8 @@ produt-detail.html
 {% endblock title %}
 
 {% block content %}
-    <div class="product_details_banner">
-        <img src="{{ product.image.url }}" alt="{{ product.product_name }}">
+    <div class="product_details_banner mt-5">
+        <img src="{{ product.image.url }}" width="100%" alt="{{ product.product_name }}">
     </div>
 
     <!-- Product Details Section -->
@@ -38,7 +38,7 @@ produt-detail.html
                             <div class="details_right">
                                 <p>{{ product.content|safe }}</p>
                                 <hr>
-                               <strong>Price : ${{ product.price|floatformat:2 }} |</strong>
+                               <!-- <strong>Price : ${{ product.price|floatformat:2 }} |</strong> -->
                                 <strong>Category : {{product.category.name}} |</strong>
                                 <span>In Stock</span>
                                 <strong>{{ product.in_stock|yesno:"Yes,No" }}</strong>
@@ -61,7 +61,7 @@ produt-detail.html
                 {% if messages %}
                     <div class="alert alert-success">
                         {% for message in messages %}
-                            <p>{{ message }}</p>
+                            <p style="font-weight: 700;">{{ message }}</p>
                         {% endfor %}
                     </div>
                 {% endif %}
@@ -95,27 +95,5 @@ produt-detail.html
         </div>
     </div>
 
-    <!-- Footer Section -->
-    <footer class="footer">
-        <div class="download_brochure">
-            <div class="container">
-                <div class="bordered_1px">
-                    <div class="row">
-                        <div class="col-lg-6 col-md-6">
-                            <div class="footer_logo">
-                                <a href="#">
-                                    <img src="{% static 'img/footer_logo.png' %}" alt="Footer Logo">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6">
-                            <div class="download_btn">
-                                <a href="#"> <img src="{% static 'img/icon/down.svg' %}" alt=""> Download Brochure</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+   
 {% endblock %}

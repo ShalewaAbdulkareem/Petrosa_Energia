@@ -33,7 +33,7 @@ def product_detail(request, slug):
         form = ProductInterestForm(request.POST, product=product)
         if form.is_valid():
             form.save()
-            messages.success(request, f"Your interest in '{product.product_name}' has been submitted successfully!")
+            messages.success(request, f"Your interest in '{product.product_name}' has been submitted successfully! Our Customercare will get in touch with you shortly")
            
             return redirect('petrosa_app:product_detail', slug=slug)
     else:
