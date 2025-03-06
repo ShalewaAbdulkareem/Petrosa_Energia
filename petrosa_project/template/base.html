@@ -121,24 +121,37 @@
                                             <li><a href="{% url 'petrosa_app:services' %}"
                                                     class="{% if request.resolver_match.url_name == 'services' %}active{% endif %}">Services</a>
                                             </li>
+                                          
                                             <li class="menu-item-has-children">
-                                                <a href="#" class="{% if request.resolver_match.url_name in 'products ' %}active{% endif %}">Products <i class="ti-angle-down"></i></a>
+                                                <a class="{% if request.resolver_match.url_name in 'products ' %}active{% endif %} href="#">Products <i class="ti-angle-down"></i></a>
                                                 <ul class="submenu">
-                                                    {% for category in categories %}
+                                                  {% for category in categories %}
                                                     <li class="menu-item-has-children">
-                                                        <a href="{% url 'petrosa_app:products' category_slug=category.slug %}">{{ category.name }} <i class="ti-angle-right"></i></a>
-                                                        {% if category.subcategories.all %}
-                                                        <ul class="submenu">
-                                                            {% for subcategory in category.subcategories.all %}
-                                                            <li><a href="{% url 'petrosa_app:subcategory' subcategory.slug %}">{{ subcategory.name }}</a></li>
-                                                            {% endfor %}
-                                                        </ul>
+                                                      <!-- If category has subcategories, show an arrow -->
+                                                      <a href="{% url 'petrosa_app:products' category_slug=category.slug %}">
+                                                        {{ category.name }}
+                                                        {% if category.has_subcategories %}
+                                                          <i class="ti-angle-right"></i>
                                                         {% endif %}
+                                                      </a>
+                                              
+                                                      <!-- Sub-menu for subcategories -->
+                                                      {% if category.subcategories.all %}
+                                                        <ul class="submenu">
+                                                          {% for subcat in category.subcategories.all %}
+                                                            <li>
+                                                              <a href="{% url 'petrosa_app:products' category_slug=subcat.slug %}">
+                                                                {{ subcat.name }}
+                                                              </a>
+                                                            </li>
+                                                          {% endfor %}
+                                                        </ul>
+                                                      {% endif %}
                                                     </li>
-                                                    {% endfor %}
+                                                  {% endfor %}
                                                 </ul>
-                                            </li>
-                                            
+                                              </li>
+                                              
                                             <li>
                                                 <a href="#"
                                                     class="{% if request.resolver_match.url_name in 'project project_details' %}active{% endif %}">Project
@@ -202,12 +215,24 @@
         <div class="download_brochure">
             <div class="container">
                 <div class="bordered_1px">
+<<<<<<< HEAD
+                        <div class="row">
+                                <!-- <div class="col-lg-6 col-md-6">
+                                        <div class="footer_logo">
+                                                <a href="#">
+                                                    <img src="{% static 'img/footer_logo.png' %}'" alt="">
+                                                </a>
+                                            </div>
+                                </div> -->
+                               
+=======
                     <div class="row">
                         <div class="col-lg-6 col-md-6">
                             <div class="footer_logo">
                                     <img src="{% static 'img/petrosa.png' %}" class="img-fluid w-25" alt="">
                                     <img src="{% static 'img/energia.png' %}" alt="">
                                 </a>
+>>>>>>> f43c0dd27787d3e800c7280041741eb39364e500
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6">

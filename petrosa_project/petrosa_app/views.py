@@ -13,14 +13,16 @@ def about(request):
 
 def services(request):
     return render(request, 'services.html')
+
 def products(request, category_slug=None):
-    categories = Category.objects.all()
+    categories = Category.objects.filter(parent=None).prefetch_related('subcategories')
     if category_slug:
         category = get_object_or_404(Category, slug=category_slug)
         products = Product.objects.filter(category=category)
     else:
         products = Product.objects.all()
     return render(request, 'products.html', {'products': products, 'categories': categories})
+
 
 
 
@@ -46,8 +48,11 @@ def blog(request):
 def contact(request):
     return render(request, 'contact.html')
 
+
 def project(request):
-    return render(request, 'project.html')
+    projects = Project.objects.all() 
+    return render(request, 'project.html', {'projects': projects})
+
 
 def project_details(request):
     return render(request, 'project_details.html')

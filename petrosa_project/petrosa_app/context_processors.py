@@ -1,5 +1,5 @@
 from petrosa_app.models import Category
 
 def navbar_context(request):
-    categories = Category.objects.prefetch_related('subcategories').all()
+    categories = Category.objects.filter(parent=None).prefetch_related('subcategories')
     return {'categories': categories}

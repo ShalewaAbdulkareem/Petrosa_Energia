@@ -6,9 +6,19 @@ produt-detail.html
 {% endblock title %}
 
 {% block content %}
-    <div class="product_details_banner mt-5">
-        <img src="{{ product.image.url }}" width="100%" alt="{{ product.product_name }}">
+    <div class="bradcam_area bradcam_bg_2 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="bradcam_text text-center">
+                        <h3>{{ product.product_name }}</h3>
+                        <p><a href="{% url 'petrosa_app:index' %}">Home</a> / {{ product.product_name }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+   
 
     <!-- Product Details Section -->
     <div class="product_details_info">
