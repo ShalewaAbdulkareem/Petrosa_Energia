@@ -24,3 +24,11 @@ class ProductInterestAdmin(admin.ModelAdmin):
     search_fields = ('name', 'email', 'product__product_name')
     list_filter = ('created_at',)
 
+<<<<<<< HEAD
+=======
+
+@admin.register(Brand)
+class BrandAdmin(admin.ModelAdmin):
+    list_display = ('name',)
+    search_fields = ('name',)
+>>>>>>> 18a42268e80cac33f05c10d251e30d3b96d15231

@@ -61,3 +61,11 @@ class ProductInterest(models.Model):
         return f"Interest in {self.product.product_name} by {self.name}"
 
 
+
+
+class Brand(models.Model):
+    name = models.CharField(max_length=100, unique=True)
+    logo = models.ImageField(upload_to='brands/')
+
+    def __str__(self):
+        return self.name
