@@ -121,24 +121,37 @@
                                             <li><a href="{% url 'petrosa_app:services' %}"
                                                     class="{% if request.resolver_match.url_name == 'services' %}active{% endif %}">Services</a>
                                             </li>
+                                          
                                             <li class="menu-item-has-children">
-                                                <a href="#" class="{% if request.resolver_match.url_name in 'products ' %}active{% endif %}">Products <i class="ti-angle-down"></i></a>
+                                                <a class="{% if request.resolver_match.url_name in 'products ' %}active{% endif %} href="#">Products <i class="ti-angle-down"></i></a>
                                                 <ul class="submenu">
-                                                    {% for category in categories %}
+                                                  {% for category in categories %}
                                                     <li class="menu-item-has-children">
-                                                        <a href="{% url 'petrosa_app:products' category_slug=category.slug %}">{{ category.name }} <i class="ti-angle-right"></i></a>
-                                                        {% if category.subcategories.all %}
-                                                        <ul class="submenu">
-                                                            {% for subcategory in category.subcategories.all %}
-                                                            <li><a href="{% url 'petrosa_app:subcategory' subcategory.slug %}">{{ subcategory.name }}</a></li>
-                                                            {% endfor %}
-                                                        </ul>
+                                                      <!-- If category has subcategories, show an arrow -->
+                                                      <a href="{% url 'petrosa_app:products' category_slug=category.slug %}">
+                                                        {{ category.name }}
+                                                        {% if category.has_subcategories %}
+                                                          <i class="ti-angle-right"></i>
                                                         {% endif %}
+                                                      </a>
+                                              
+                                                      <!-- Sub-menu for subcategories -->
+                                                      {% if category.subcategories.all %}
+                                                        <ul class="submenu">
+                                                          {% for subcat in category.subcategories.all %}
+                                                            <li>
+                                                              <a href="{% url 'petrosa_app:products' category_slug=subcat.slug %}">
+                                                                {{ subcat.name }}
+                                                              </a>
+                                                            </li>
+                                                          {% endfor %}
+                                                        </ul>
+                                                      {% endif %}
                                                     </li>
-                                                    {% endfor %}
+                                                  {% endfor %}
                                                 </ul>
-                                            </li>
-                                            
+                                              </li>
+                                              
                                             <li>
                                                 <a href="#"
                                                     class="{% if request.resolver_match.url_name in 'project project_details' %}active{% endif %}">Project

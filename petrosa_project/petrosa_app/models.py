@@ -3,6 +3,8 @@ from tinymce.models import HTMLField
 from django.urls import reverse
 from django.utils import timezone
 
+
+
 class Category(models.Model):
     name = models.CharField(max_length=255)
     slug = models.SlugField(unique=True)
@@ -10,6 +12,9 @@ class Category(models.Model):
 
     def __str__(self):
         return self.name
+
+    def has_subcategories(self):
+        return self.subcategories.exists()
 
 class Product(models.Model):
     category = models.ForeignKey(Category, related_name='products', on_delete=models.CASCADE)
