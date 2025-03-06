@@ -6,7 +6,8 @@ from django.contrib import messages
 
 # Create your views here.
 def index(request):
-    return render(request, 'index.html')
+    brands = Brand.objects.all()
+    return render(request, 'index.html',{'brands': brands})
 
 def about(request):
     return render(request, 'about.html')

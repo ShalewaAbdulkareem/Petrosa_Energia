@@ -251,14 +251,7 @@
                         <h3 class="gallery_title">Take a look Some of our <br>
                             awesome projects</h3>
                     </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="portfolio-menu">
-                            <button class="active" data-filter="*">All</button>
-                            <button data-filter=".cat1">Generators</button>
-                            <button data-filter=".cat2">Genuine Spare Parts</button>
-                            <button data-filter=".cat3">33KV/11KV Panels</button>
-                        </div>
-                    </div>
+                   
                 </div>
             </div>
         </div>
@@ -507,5 +500,23 @@
         </div>
     </div>
     <!-- contact_us_end -->
+
+    <div class="features_area mt-5">
+        <div class="container">
+            <h2 class="text-center text-dark">Major Brand We Deal With</h2>
+            <div class="row no-gutters">
+                {% for brand in brands %}
+                <div class="col-lg-2 col-md-2">
+                    <div class="single_feature text-center">
+                       <img src="{{ brand.logo.url }}" class="img-fluid" alt="{{ brand.name }}">
+                    </div>
+                </div>
+                {% empty %}
+                <p class="text-center">No brands available.</p>
+                 {% endfor %}    
+               
+            </div>
+        </div>
+    </div>
     {% endblock %}
    
