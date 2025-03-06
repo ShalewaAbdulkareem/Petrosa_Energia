@@ -23,3 +23,4 @@ class ProductInterestAdmin(admin.ModelAdmin):
     list_display = ('name', 'email', 'product', 'created_at')
     search_fields = ('name', 'email', 'product__product_name')
     list_filter = ('created_at',)
+

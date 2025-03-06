@@ -48,9 +48,8 @@ def blog(request):
 def contact(request):
     return render(request, 'contact.html')
 
-
 def project(request):
-    projects = Project.objects.all() 
+    projects = Project.objects.all()
     return render(request, 'project.html', {'projects': projects})
 
 
