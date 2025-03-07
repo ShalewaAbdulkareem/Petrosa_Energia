@@ -7,7 +7,12 @@ from django.contrib import messages
 # Create your views here.
 def index(request):
     brands = Brand.objects.all()
-    return render(request, 'index.html',{'brands': brands})
+    our_service = Service.objects.all()
+    context = {
+        'brands': brands,
+        'our_service': our_service,
+    }
+    return render(request, 'index.html', context)
 
 def about(request):
     return render(request, 'about.html')
@@ -49,9 +54,9 @@ def blog(request):
 def contact(request):
     return render(request, 'contact.html')
 
+
 def project(request):
-    projects = Project.objects.all()
-    return render(request, 'project.html', {'projects': projects})
+    return render(request, 'project.html')
 
 
 def project_details(request):

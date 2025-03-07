@@ -10,11 +10,12 @@ class CategoryAdmin(admin.ModelAdmin):
 admin.site.register(Category, CategoryAdmin)
 
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ('product_name', 'category',  'in_stock', 'created_at')  
+    list_display = ('product_name', 'category', 'in_stock', 'created_at')  
     list_filter = ('category', 'in_stock')  
     search_fields = ('product_name', 'category__name')  
     prepopulated_fields = {'slug': ('product_name',)}  
     ordering = ('-created_at',)  
+
 admin.site.register(Product, ProductAdmin)
 
 
@@ -24,11 +25,13 @@ class ProductInterestAdmin(admin.ModelAdmin):
     search_fields = ('name', 'email', 'product__product_name')
     list_filter = ('created_at',)
 
-<<<<<<< HEAD
-=======
 
 @admin.register(Brand)
 class BrandAdmin(admin.ModelAdmin):
     list_display = ('name',)
     search_fields = ('name',)
->>>>>>> 18a42268e80cac33f05c10d251e30d3b96d15231
+
+@admin.register(Service)
+class ServiceAmin(admin.ModelAdmin):
+    list_display = ('name',)
+    search_fields = ('name',)

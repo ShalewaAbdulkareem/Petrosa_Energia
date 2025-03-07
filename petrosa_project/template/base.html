@@ -151,9 +151,8 @@
                                                   {% endfor %}
                                                 </ul>
                                               </li>
-                                              <li><a href="{% url 'petrosa_app:project' %}" class="{% if request.resolver_match.url_name == 'project' %}active{% endif %}">Projects</a></li>
-
-                                            <!-- <li>
+                                              
+                                            <li>
                                                 <a href="#"
                                                     class="{% if request.resolver_match.url_name in 'project project_details' %}active{% endif %}">Project
                                                     <i class="ti-angle-down"></i></a>
@@ -165,7 +164,7 @@
                                                             class="{% if request.resolver_match.url_name == 'project_details' %}active{% endif %}">Project
                                                             Details</a></li>
                                                 </ul>
-                                            </li> -->
+                                            </li>
                                             <li>
                                                 <a href="#"
                                                     class="{% if request.resolver_match.url_name in 'blog single_blog' %}active{% endif %}">Blog

@@ -23,35 +23,38 @@
     <!--/ bradcam_area  -->
 
         <!-- product_area-START -->
-        <div class="single_gallery">
-            <div class="thumb">
-                <img src="{{ product.show_image1 }}" alt="{{ product.product_name }}">
-            </div>
-            <div class="gallery_hover">
-                <div class="hover_inner d-flex align-items-center justify-content-between">
-                    <h3>{{ product.product_name }}</h3>
-                    <p>{{ product.price }}</p>
-                    
-                    <div class="icon dropdown">
-                        <a href="{% url 'petrosa_app:product_detail' slug=product.slug %}">
-                            <i class="ti-angle-right"></i>
-                        </a>
+        <div class="gallery_area add_padding">
         
-                        {% if product.subcategory %}
-                            <a class="dropdown-btn">
-                                <i class="ti-angle-down"></i>
-                            </a>
-                            <div class="dropdown-content">
-                                <a href="{% url 'petrosa_app:subcategory' product.subcategory.slug %}">
-                                    {{ product.subcategory.name }}
-                                </a>
+            
+            <div class="container p-0 mb-5">
+                <div class="row grid no-gutters">
+                    {% for product in products %}
+                    <div class="col-xl-4 col-lg-4 col-md-6 grid-item {{ product.category.slug }}">
+                        <div class="single_gallery">
+                            <div class="thumb">
+                                <img src="{{ product.show_image1 }}" alt="{{ product.product_name }}">
                             </div>
-                        {% endif %}
+                            <div class="gallery_hover">
+                                <div class="hover_inner d-flex align-items-center justify-content-between">
+                                    <h3>{{ product.product_name }}</h3>
+                                    <p>{{ product.price }}</p>
+                                    <div class="icon">
+                                        <a href="{% url 'petrosa_app:product_detail' slug=product.slug %}">
+                                            <i class="ti-angle-right"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                    {% endfor %}
+                    
                 </div>
             </div>
+
         </div>
-                
+        
+            
    
     <div class="contact_us overlay">
         <div class="container">

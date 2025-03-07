@@ -2,6 +2,7 @@ from django.db import models
 from tinymce.models import HTMLField
 from django.urls import reverse
 from django.utils import timezone
+# from django.utils.timezone import now
 
 
 
@@ -66,6 +67,15 @@ class ProductInterest(models.Model):
 class Brand(models.Model):
     name = models.CharField(max_length=100, unique=True)
     logo = models.ImageField(upload_to='brands/')
+
+    def __str__(self):
+        return self.name
+
+
+class Service(models.Model):
+    image = models.ImageField(upload_to = 'services/')
+    name = models.CharField(max_length=200)
+    content = HTMLField()
 
     def __str__(self):
         return self.name
