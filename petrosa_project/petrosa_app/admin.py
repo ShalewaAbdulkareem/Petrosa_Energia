@@ -35,3 +35,8 @@ class BrandAdmin(admin.ModelAdmin):
 class ServiceAmin(admin.ModelAdmin):
     list_display = ('name',)
     search_fields = ('name',)
+
+@admin.register(Project_name)
+class Project_nameAdmin(admin.ModelAdmin):
+    list_display = ('name',)
+    search_fields = ('name',)

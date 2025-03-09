@@ -178,6 +178,9 @@
                                                             Blog</a></li>
                                                 </ul>
                                             </li>
+                                            <li><a href="{% url 'petrosa_app:truevalue' %}"
+                                                class="{% if request.resolver_match.url_name == 'truevalue' %}active{% endif %}">TrueValue</a>
+                                        </li>
                                             <li><a href="{% url 'petrosa_app:contact' %}"
                                                     class="{% if request.resolver_match.url_name == 'contact' %}active{% endif %}">Contact</a>
                                             </li>

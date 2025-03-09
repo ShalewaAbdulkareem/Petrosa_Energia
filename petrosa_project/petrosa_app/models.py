@@ -79,3 +79,11 @@ class Service(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Project_name(models.Model):
+    name = models.CharField(max_length=200)
+    image = models.ImageField(upload_to = 'projects/')
+
+    def __str__(self):
+        return self.name
