@@ -23,13 +23,20 @@
     <!--/ bradcam_area  -->
 
         <!-- product_area-START -->
-        <div class="gallery_area add_padding">
+        <div class="gallery_area add_padding" 
+            {% if selected_category %}
+                {% if selected_category == "Caterpillar" %} style="background-color: yellow;" 
+                {% elif selected_category == "Perkins" %} style="background-color: #003087;" 
+                {% elif selected_category == "Cummins" %} style="background-color: #da291c;" 
+                {% endif %}
+            {% endif %}
+        >
         
             
-            <div class="container p-0 mb-5">
+            <div class="container p-0 mb-5" >
                 <div class="row grid no-gutters">
                     {% for product in products %}
-                    <div class="col-xl-4 col-lg-4 col-md-6 grid-item {{ product.category.slug }}">
+                    <div  class="col-xl-4 col-lg-4 col-md-6 grid-item  {{ product.category.slug }}">
                         <div class="single_gallery">
                             <div class="thumb">
                                 <img src="{{ product.show_image1 }}" alt="{{ product.product_name }}">
@@ -39,7 +46,14 @@
                                     <h3>{{ product.product_name }}</h3>
                                     <p>{{ product.price }}</p>
                                     <div class="icon">
-                                        <a href="{% url 'petrosa_app:product_detail' slug=product.slug %}">
+                                        <a href="{% url 'petrosa_app:product_detail' slug=product.slug %}"
+                                        {% if selected_category %}
+                                        {% if selected_category == "Caterpillar" %} style="background-color: yellow;" 
+                                        {% elif selected_category == "Perkins" %} style="background-color: #003087;" 
+                                        {% elif selected_category == "Cummins" %} style="background-color: #da291c;" 
+                                        {% endif %}
+                                        {% endif %}
+                                        >
                                             <i class="ti-angle-right"></i>
                                         </a>
                                     </div>

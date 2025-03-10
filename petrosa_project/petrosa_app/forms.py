@@ -1,6 +1,6 @@
 from django import forms
-from .models import ProductInterest
-
+from petrosa_app.models import *
+from django_countries.widgets import CountrySelectWidget
 
 
 class ProductInterestForm(forms.ModelForm):
@@ -8,7 +8,7 @@ class ProductInterestForm(forms.ModelForm):
         model = ProductInterest
         fields = ['name', 'email', 'message', 'product']
         widgets = {
-            'product': forms.HiddenInput(),  # Product field is hidden and not editable
+            'product': forms.HiddenInput(),
             'name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Your Name'}),
             'email': forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Your Email'}),
             'message': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Your Message', 'rows': 4}),
@@ -19,3 +19,27 @@ class ProductInterestForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
         if product:
             self.fields['product'].initial = product
+
+
+class QuickQuoteForm(forms.ModelForm):
+    class Meta:
+        model = QuickQuote
+        fields = ['product', 'first_name', 'last_name', 'email', 'company', 'phone', 'city', 'country', 'state', 'message']
+
+        widgets = {
+            'product': forms.TextInput(attrs={'class': 'form-control', 'readonly': 'readonly'}),  # Read-only product
+            'first_name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'First Name'}),
+            'last_name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Last Name'}),
+            'email': forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Email'}),
+            'company': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Company Name'}),
+            'phone': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Phone Number'}),
+            'city': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'City'}),
+            'country': CountrySelectWidget(attrs={'class': 'form-control', 'id': 'country'}),
+            'state': forms.TextInput(attrs={'class': 'form-control', 'id': 'state', 'placeholder': 'State'}),
+            'message': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Your Message', 'rows': 4}),
+        }
+
+    def __init__(self, *args, **kwargs):
+        super(QuickQuoteForm, self).__init__(*args, **kwargs)
+        if 'instance' in kwargs:
+            self.fields['product'].initial = kwargs['instance'].product.name 

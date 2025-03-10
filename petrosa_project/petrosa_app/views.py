@@ -26,12 +26,15 @@ def services(request):
 
 def products(request, category_slug=None):
     categories = Category.objects.filter(parent=None).prefetch_related('subcategories')
+    selected_category = None
+    
     if category_slug:
         category = get_object_or_404(Category, slug=category_slug)
+        selected_category = category.name
         products = Product.objects.filter(category=category)
     else:
         products = Product.objects.all()
-    return render(request, 'products.html', {'products': products, 'categories': categories})
+    return render(request, 'products.html', {'products': products, 'categories': categories, 'selected_category': selected_category})
 
 
 
@@ -72,4 +75,27 @@ def project_details(request):
 
 
 def truevalue(request):
-    return render(request, 'truevalue.html')
+    products = TrueValueProduct.objects.all()
+    return render(request, 'truevalue.html', {'products': products})
+
+def truevalue_product_detail(request, slug):
+    product = get_object_or_404(TrueValueProduct, slug=slug)
+    return render(request, 'truevalue-details.html', {'product': product})
+
+def quick_quote(request, product_slug):
+    product = get_object_or_404(TrueValueProduct, slug=product_slug)  # Get product by slug
+
+    if request.method == 'POST':
+        form = QuickQuoteForm(request.POST)
+        if form.is_valid():
+            quote = form.save(commit=False)
+            quote.product = product  
+            quote.save()
+            messages.success(request, "Your quote request has been submitted successfully!")
+            return redirect(product.get_absolute_url())  
+        else:
+            messages.error(request, "There was an error submitting the form. Please try again.")
+    else:
+        form = QuickQuoteForm(initial={'product': product.name})  
+
+    return render(request, 'quick-quote.html', {'form': form, 'product': product})
