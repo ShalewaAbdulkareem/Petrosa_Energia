@@ -7,13 +7,22 @@ from django.contrib import messages
 # Create your views here.
 def index(request):
     brands = Brand.objects.all()
-    return render(request, 'index.html',{'brands': brands})
+    our_service = Service.objects.all()
+    context = {
+        'brands': brands,
+        'our_service': our_service,
+    }
+    return render(request, 'index.html', context)
 
 def about(request):
     return render(request, 'about.html')
 
 def services(request):
-    return render(request, 'services.html')
+    our_service = Service.objects.all()
+    context = {
+        'our_service': our_service
+    }
+    return render(request, 'services.html', context)
 
 def products(request, category_slug=None):
     categories = Category.objects.filter(parent=None).prefetch_related('subcategories')
@@ -51,9 +60,16 @@ def contact(request):
 
 
 def project(request):
-    projects = Project.objects.all() 
-    return render(request, 'project.html', {'projects': projects})
+    all_project = Project_name.objects.all()
+    context = {
+        'all_project': all_project
+    }
+    return render(request, 'project.html', context)
 
 
 def project_details(request):
     return render(request, 'project_details.html')
+
+
+def truevalue(request):
+    return render(request, 'truevalue.html')

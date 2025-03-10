@@ -26,7 +26,7 @@
     <!-- gallery_area-START -->
     <div class="gallery_area add_padding">
         <div class="container">
-            <div class="gallery_nav">
+            <!-- <div class="gallery_nav">
                 <div class="row align-items-center">
                     <div class="col-lg-12 col-md-12">
                         <div class="portfolio-menu mb-50 text-center">
@@ -37,18 +37,19 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
         <div class="container-fluid p-0">
             <div class="row grid no-gutters">
+                {% for all_project in all_project %}
                 <div class="col-xl-3 col-lg-3 col-md-6 grid-item cat3 cat3">
                     <div class="single_gallery">
                         <div class="thumb">
-                            <img src="{% static 'img/gallery/1.png' %}" alt="">
+                            <img src="{{all_project.image.url}}" alt="">
                         </div>
                         <div class="gallery_hover">
                             <div class="hover_inner d-flex align-items-center justify-content-between">
-                                <h3>Maintenance & Repair</h3>
+                                <h3>{{all_project.name}}</h3>
                                 <div class="icon">
                                     <a href="project_details.html">
                                         <i class="ti-angle-right"></i>
@@ -58,13 +59,14 @@
                         </div>
                     </div>
                 </div>
+                {% endfor %}
             </div>
         </div>
     </div>
     <!-- gallery_area-END -->
 
     <!-- more_pro_btn_start  -->
-    <a href="#" class="more_pro_btn">load more</a>
+    <!-- <a href="#" class="more_pro_btn">load more</a> -->
     <!-- more_pro_btn_end  -->
 
 
@@ -77,7 +79,7 @@
                                 </div>
                     </div>
                 </div>
-                <div class="row">
+                <!-- <div class="row">
                     <div class="col-xl-12">
                         <div class="testmonial_active owl-carousel">
                             <div class="single_carousel">
@@ -121,26 +123,9 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
-    <!-- contact_us_start  -->
-    <div class="contact_us overlay">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-8 col-md-7">
-                    <div class="contact_text">
-                    <h3>Looking for Reliable Power Solutions and Electrical Services?</h3>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-5">
-                    <div class="contact_btn">
-                        <a class="boxed-btn3" href="{% url 'petrosa_app:contact' %}">Contact Us</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- contact_us_end -->
+    
 {% endblock %}
  
