@@ -73,3 +73,6 @@ def project_details(request):
 
 def truevalue(request):
     return render(request, 'truevalue.html')
+
+def truevalue_detail(request):
+    return render(request, 'truevalue-detail.html')
