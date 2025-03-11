@@ -1,5 +1,6 @@
 from django.contrib import admin
 from petrosa_app.models import *
+from django.utils.text import slugify
 
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ('name', 'slug', 'parent') 
@@ -40,3 +41,12 @@ class ServiceAmin(admin.ModelAdmin):
 class Project_nameAdmin(admin.ModelAdmin):
     list_display = ('name',)
     search_fields = ('name',)
+    
+
+class TrueValueProductAdmin(admin.ModelAdmin):
+    list_display = ('name', 'price', 'created_at', 'uploaded_at')  
+    list_filter = ('created_at', 'uploaded_at')
+    prepopulated_fields = {'slug': ('name',)}  
+    ordering = ('-created_at',) 
+
+admin.site.register(TrueValueProduct, TrueValueProductAdmin)
