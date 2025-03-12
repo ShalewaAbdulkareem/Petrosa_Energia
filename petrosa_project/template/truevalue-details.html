@@ -28,7 +28,8 @@
                 <h2>{{ product.name }}</h2>
                 <p>{{ product.description|safe }}</p>
                 <h4 class="text-primary">Price: ${{ product.price }}</h4>
-                <a href="{% url 'petrosa_app:quick_quote' slug=product.slug %}" class="btn btn-warning">Quick Quote</a>
+                <a href="{% url 'petrosa_app:quick_quote' product_slug=product.slug %}" class="btn btn-warning">Quick Quote</a>
+
             </div>
         </div>
     </div>

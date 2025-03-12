@@ -18,10 +18,6 @@ urlpatterns = [
     path('project/', views.project, name='project'),
     path('project_details/', views.project_details, name='project_details'),
     path('truevalue/', views.truevalue, name='truevalue'),
-<<<<<<< HEAD
-    
-=======
     path('truevalue/<slug:slug>/', views.truevalue_product_detail, name='true_product_detail'),
-    path('quick-quote/<slug:product_slug>/', views.quick_quote, name='quick_quote')
->>>>>>> 9baf7790e0e7f3aec9af89765014d0ebfdc32e0c
+    path('quick-quote/<slug:product_slug>/', views.quick_quote, name='quick_quote'),
 ]

@@ -75,12 +75,6 @@ def project_details(request):
 
 
 def truevalue(request):
-<<<<<<< HEAD
-    return render(request, 'truevalue.html')
-
-def truevalue_detail(request):
-    return render(request, 'truevalue-detail.html')
-=======
     products = TrueValueProduct.objects.all()
     return render(request, 'truevalue.html', {'products': products})
 
@@ -105,4 +99,3 @@ def quick_quote(request, product_slug):
         form = QuickQuoteForm(initial={'product': product.name})  
 
     return render(request, 'quick-quote.html', {'form': form, 'product': product})
->>>>>>> 9baf7790e0e7f3aec9af89765014d0ebfdc32e0c
