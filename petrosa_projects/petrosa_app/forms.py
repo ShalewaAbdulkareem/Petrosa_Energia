@@ -2,15 +2,16 @@ from django import forms
 from petrosa_app.models import *
 from django_countries.widgets import CountrySelectWidget
 
-
 class ProductInterestForm(forms.ModelForm):
     class Meta:
         model = ProductInterest
-        fields = ['name', 'email', 'message', 'product']
+        fields = ['name', 'email','company_name','phone_number','message', 'product',]
         widgets = {
             'product': forms.HiddenInput(),
             'name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Your Name'}),
             'email': forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Your Email'}),
+            'company_name':forms.TextInput(attrs={'class':'form-control', 'placeholder':'Company Name'}),
+            'phone_number': forms.NumberInput(attrs={'class' : 'form-control', 'placeholder': 'Your Phone Number'}),
             'message': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Your Message', 'rows': 4}),
         }
 

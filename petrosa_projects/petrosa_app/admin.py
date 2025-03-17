@@ -19,18 +19,15 @@ class ProductAdmin(admin.ModelAdmin):
 
 admin.site.register(Product, ProductAdmin)
 
-
 @admin.register(ProductInterest)
 class ProductInterestAdmin(admin.ModelAdmin):
-    list_display = ('name', 'email', 'product', 'created_at')
-    search_fields = ('name', 'email', 'product__product_name')
-    list_filter = ('created_at',)
-
+    list_display = ('name','email', 'company_name','phone_number','product', 'created_at')
+    search_fields =('name', 'email', 'product')
 
 @admin.register(Brand)
 class BrandAdmin(admin.ModelAdmin):
     list_display = ('name',)
-    search_fields = ('name',)
+    search_fields = ('name', 'email','product__product_name')
 
 @admin.register(Service)
 class ServiceAmin(admin.ModelAdmin):
@@ -50,3 +47,9 @@ class TrueValueProductAdmin(admin.ModelAdmin):
     ordering = ('-created_at',) 
 
 admin.site.register(TrueValueProduct, TrueValueProductAdmin)
+
+@admin.register(Contact)
+class ContactAdmin(admin.ModelAdmin):
+    list_display = ('name', 'email', 'subject', 'created_at')
+    search_fields = ('name', 'email', 'subject', 'message')
+    list_filter = ('created_at',)

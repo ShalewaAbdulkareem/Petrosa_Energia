@@ -52,17 +52,6 @@ class Product(models.Model):
         super().save(*args, **kwargs)
 
 
-class ProductInterest(models.Model):
-    product = models.ForeignKey(Product, on_delete=models.CASCADE)  # Link to the Product model
-    name = models.CharField(max_length=100)
-    email = models.EmailField()
-    message = HTMLField()
-    created_at = models.DateTimeField(default=timezone.now)
-
-    def __str__(self):
-        return f"Interest in {self.product.product_name} by {self.name}"
-
-
 
 
 class Brand(models.Model):
@@ -80,7 +69,17 @@ class Service(models.Model):
 
     def __str__(self):
         return self.name
-
+        
+class ProductInterest(models.Model):
+    product = models.ForeignKey(Product,on_delete= models.CASCADE)
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    company_name =models.CharField(max_length=100)
+    phone_number = models.CharField(max_length=20, unique=True, verbose_name="Phone Number")
+    message = HTMLField()
+    created_at = models.DateTimeField(default =timezone.now)
+    def __str__(self):
+        return f'Interest in {seld.product.product_name} by {self.name}'
 
 class Project_name(models.Model):
     name = models.CharField(max_length=200)
@@ -121,18 +120,26 @@ class TrueValueProduct(models.Model):
         super().save(*args, **kwargs)
         
 class QuickQuote(models.Model):
-    product = models.ForeignKey(TrueValueProduct, on_delete=models.CASCADE, related_name="quotes")
+    product = models.ForeignKey(TrueValueProduct, on_delete=models.CASCADE)
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     email = models.EmailField()
-    company = models.CharField(max_length=255, blank=True, null=True)
+    company = models.CharField(max_length=200, blank=True, null=True)
     phone = models.CharField(max_length=20)
     city = models.CharField(max_length=100)
-    country = CountryField(blank_label="Select Country")
-    state = models.CharField(max_length=100, blank=True, null=True)  
-    message = HTMLField()
-
+    country = models.CharField(max_length=100)
+    state = models.CharField(max_length=100, blank=True, null=True)  # ✅ Add this field
+    message = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return f"Quote from {self.first_name} {self.last_name}"
+
+
+class Contact(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    phone = models.CharField(max_length=50, blank=True, null=True)
+    subject = models.CharField(max_length=100)
+    message = models.TextField()
+    created_at = models.DateTimeField(default=timezone.now)  # Use timezone.now for default

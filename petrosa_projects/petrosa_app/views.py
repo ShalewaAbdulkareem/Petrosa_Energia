@@ -3,6 +3,14 @@ from django.shortcuts import render, get_object_or_404, redirect
 from petrosa_app.models import *
 from petrosa_app.forms import *
 from django.contrib import messages 
+from django.template.loader import render_to_string
+from django.utils.html import strip_tags
+from django.core.mail import EmailMessage
+from django.conf import settings
+from django.core.mail import send_mail  # Import send_mail
+
+
+
 
 # Create your views here.
 def index(request):
@@ -38,27 +46,74 @@ def products(request, category_slug=None):
 
 
 
-
 def product_detail(request, slug):
     product = get_object_or_404(Product, slug=slug)
-    
+
     if request.method == 'POST':
         form = ProductInterestForm(request.POST, product=product)
         if form.is_valid():
-            form.save()
-            messages.success(request, f"Your interest in '{product.product_name}' has been submitted successfully! Our Customercare will get in touch with you shortly")
-           
+            interest = form.save()
+
+            # Emails of the two recipients
+            recipient_emails = [settings.EMAIL_HOST_USER]
+
+            # Email Subject and Message
+            subject = f"New Product Inquiry: {interest.product.product_name}"
+            message = f"""
+            A customer has shown interest in {interest.product.product_name}.
+
+            Name: {interest.name}
+            Email: {interest.email}
+            Company_name: {interest.company_name}
+            Phone_number: {interest.phone_number}
+            Message: {interest.message}
+
+            
+            """
+
+            # ✅ Send email using send_mail
+            send_mail(subject, message, settings.DEFAULT_FROM_EMAIL, recipient_emails)
+
+            messages.success(request, f"Your interest in '{product.product_name}' has been submitted successfully! Our customer care will get in touch with you shortly.")
             return redirect('petrosa_app:product_detail', slug=slug)
     else:
         form = ProductInterestForm(product=product)
 
     return render(request, 'product-detail.html', {'product': product, 'form': form})
 
-
 def blog(request):
     return render(request, 'blog.html')
 
 def contact(request):
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        subject = request.POST.get('subject')
+        message = request.POST.get('message')
+
+        if not name or not email or not subject or not message:
+            messages.error(request, 'Fields cannot be empty')
+        else:
+            data = Contact(name=name, email=email, subject=subject, message=message)
+            email_subject = f'{subject}: FROM PETROSA ENERGIA LTD WEBSITE'
+            email_data = {
+                'name': name,
+                'email': email,
+                'message': message
+            }
+            html_message = render_to_string('contact-mail.html', email_data)
+            plain_message = strip_tags(html_message)
+            from_email = 'PETROSA ENERGIA LTD<customercare@petrosaglobal.com>'
+            recipient_list = [settings.EMAIL_HOST_USER, "md@petrosaglobal.com"]
+
+            try:
+                email_message = EmailMessage(email_subject, plain_message, from_email, recipient_list)
+                email_message.send()
+                data.save()
+                messages.success(request, 'Message sent successfully')
+            except Exception as e:
+                messages.error(request, f'Failed to send message: {str(e)}')
+
     return render(request, 'contact.html')
 
 
@@ -91,7 +146,34 @@ def quick_quote(request, product_slug):
             quote = form.save(commit=False)
             quote.product = product  
             quote.save()
-            messages.success(request, "Your quote request has been submitted successfully!")
+
+            # **SEND EMAIL TO CUSTOMER CARE**
+            email_subject = f"Quick Quote Request for {product.name}"
+            email_data = {
+                "product": product.name,
+                "first_name": quote.first_name,
+                "last_name": quote.last_name,
+                "email": quote.email,
+                "company": quote.company,
+                "phone": quote.phone,
+                "city": quote.city,
+                "country": quote.country,
+                "state": request.POST.get("state"),
+                "message": quote.message,
+            }
+
+            html_message = render_to_string("quickquote-mail.html", email_data)
+            plain_message = strip_tags(html_message)
+            from_email = settings.EMAIL_HOST_USER
+            recipient_list = [settings.EMAIL_HOST_USER]  # Change this to the correct email
+
+            try:
+                email_message = EmailMessage(email_subject, plain_message, from_email, recipient_list)
+                email_message.send()
+                messages.success(request, "Your quote request has been submitted successfully!")
+            except Exception as e:
+                messages.error(request, f"Failed to send email: {str(e)}")
+
             return redirect(product.get_absolute_url())  
         else:
             messages.error(request, "There was an error submitting the form. Please try again.")

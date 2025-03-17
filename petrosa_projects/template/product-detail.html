@@ -77,7 +77,20 @@ produt-detail.html
                 {% endif %}
                 <form method="POST">
                     {% csrf_token %}
-                    {{ form.as_p }}
+                    {% for field in form %}
+    <div class="form-group">
+        {{ field.label_tag }}
+        {{ field }}
+        {% if field.errors %}
+            <div class="text-danger">
+                {% for error in field.errors %}
+                    <p>{{ error }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+{% endfor %}
+
     
                     
                     <button class="boxed-btn3 mt-5 mb-5" type="submit">Submit</button>
