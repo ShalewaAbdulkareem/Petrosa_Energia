@@ -19,11 +19,10 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path
-# from petrosa_app.models import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('petrosa_app.urls', namespace='petrosa_app')),
+    path('', include('petrosa_energia_app.urls', namespace='petrosa_energia_app')),
     path('tinymce/', include('tinymce.urls')),
 ]
 

@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'petrosa_app',
+    'petrosa_energia_app',
     'tinymce',
 ]
 
@@ -88,7 +88,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'petrosa_app.context_processors.navbar_context', 
+                'petrosa_energia_app.context_processors.navbar_context', 
             ],
         },
     },

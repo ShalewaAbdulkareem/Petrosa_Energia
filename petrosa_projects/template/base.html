@@ -59,7 +59,7 @@
                     <div class="row justify-content-between align-items-center">
                         <div class="col-xl-3 col-lg-3">
                             <div class="logo">
-                                <a href="{% url 'petrosa_app:index' %}">
+                                <a href="{% url 'petrosa_energia_app:index' %}">
                                     <img src="{% static 'img/petrosa ltd.png' %}" width="150%" alt=""> 
                                     <!-- <span class="text-white" style="font-weight: 900;">PETROSA</span> -->
                                 </a>
@@ -112,13 +112,13 @@
                                 <div class="main-menu  d-none d-lg-block">
                                     <nav>
                                         <ul id="navigation">
-                                            <li><a href="{% url 'petrosa_app:index' %}"
+                                            <li><a href="{% url 'petrosa_energia_app:index' %}"
                                                     class="{% if request.resolver_match.url_name == 'index' %}active{% endif %}">Home</a>
                                             </li>
-                                            <li><a href="{% url 'petrosa_app:about' %}"
+                                            <li><a href="{% url 'petrosa_energia_app:about' %}"
                                                     class="{% if request.resolver_match.url_name == 'about' %}active{% endif %}">About</a>
                                             </li>
-                                            <li><a href="{% url 'petrosa_app:services' %}"
+                                            <li><a href="{% url 'petrosa_energia_app:services' %}"
                                                     class="{% if request.resolver_match.url_name == 'services' %}active{% endif %}">Services</a>
                                             </li>
                                           
@@ -128,7 +128,7 @@
                                                   {% for category in categories %}
                                                     <li class="menu-item-has-children">
                                                       <!-- If category has subcategories, show an arrow -->
-                                                      <a href="{% url 'petrosa_app:products' category_slug=category.slug %}">
+                                                      <a href="{% url 'petrosa_energia_app:products' category_slug=category.slug %}">
                                                         {{ category.name }}
                                                         {% if category.has_subcategories %}
                                                           <i class="ti-angle-right"></i>
@@ -140,7 +140,7 @@
                                                         <ul class="submenu">
                                                           {% for subcat in category.subcategories.all %}
                                                             <li>
-                                                              <a href="{% url 'petrosa_app:products' category_slug=subcat.slug %}">
+                                                              <a href="{% url 'petrosa_energia_app:products' category_slug=subcat.slug %}">
                                                                 {{ subcat.name }}
                                                               </a>
                                                             </li>
@@ -157,7 +157,7 @@
                                                     class="{% if request.resolver_match.url_name in 'project project_details' %}active{% endif %}">Project
                                                     <i class="ti-angle-down"></i></a>
                                                 <ul class="submenu">
-                                                    <li><a href="{% url 'petrosa_app:project' %}"
+                                                    <li><a href="{% url 'petrosa_energia_app:project' %}"
                                                             class="{% if request.resolver_match.url_name == 'project' %}active{% endif %}">Project</a>
                                                     </li>
                                                     <li><a href="project_details.html"
@@ -178,10 +178,10 @@
                                                             Blog</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a href="{% url 'petrosa_app:truevalue' %}"
+                                            <li><a href="{% url 'petrosa_energia_app:truevalue' %}"
                                                 class="{% if request.resolver_match.url_name == 'truevalue' %}active{% endif %}">TrueValue</a>
                                         </li>
-                                            <li><a href="{% url 'petrosa_app:contact' %}"
+                                            <li><a href="{% url 'petrosa_energia_app:contact' %}"
                                                     class="{% if request.resolver_match.url_name == 'contact' %}active{% endif %}">Contact</a>
                                             </li>
                                         </ul>

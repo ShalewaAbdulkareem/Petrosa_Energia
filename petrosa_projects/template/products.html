@@ -46,11 +46,11 @@
                                     <h3>{{ product.product_name }}</h3>
                                     <p>{{ product.price }}</p>
                                     <div class="icon">
-                                        <a href="{% url 'petrosa_app:product_detail' slug=product.slug %}"
+                                        <a href="{% url 'petrosa_energia_app:product_detail' slug=product.slug %}"
                                         {% if selected_category %}
-                                        {% if selected_category == "Caterpillar" %} style="background-color: yellow;" 
-                                        {% elif selected_category == "Perkins" %} style="background-color: #003087;" 
-                                        {% elif selected_category == "Cummins" %} style="background-color: #da291c;" 
+                                        {% if selected_category == "Caterpillar" %}
+                                        {% elif selected_category == "Perkins" %}
+                                        {% elif selected_category == "Cummins" %}
                                         {% endif %}
                                         {% endif %}
                                         >
@@ -80,7 +80,7 @@
                 </div>
                 <div class="col-lg-4 col-md-5">
                     <div class="contact_btn">
-                        <a class="boxed-btn3" href="{% url 'petrosa_app:contact' %}">Contact Us</a>
+                        <a class="boxed-btn3" href="{% url 'petrosa_energia_app:contact' %}">Contact Us</a>
                     </div>
                 </div>
             </div>
