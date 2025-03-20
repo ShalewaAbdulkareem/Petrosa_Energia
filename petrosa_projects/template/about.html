@@ -1,0 +1,237 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+  About Page
+{% endblock title %}
+
+{% block content %}
+
+
+  <!-- bradcam_area  -->
+  <div class="bradcam_area bradcam_bg_2 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="bradcam_text text-center">
+                        <h3>About Us</h3>
+                        <p><a href="{% url 'petrosa_energia_app:about' %}">Home</a> / About</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/ bradcam_area  -->
+
+
+    <!-- about_area_start  -->
+    <div class="about_area add_padding">
+        <div class="container">
+            <div class="border_1px">
+                <div class="row align-items-center">
+                    <div class="col-xl-6  col-md-6">
+                        <div class="about_thumb">
+                            <img src="{% static 'img/about/about2.png' %}" alt="">
+                            <div class="pattern_img d-none d-lg-block">
+                                <img src="{% static 'img/pattern/pattern.svg' %}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-md-6">
+                        <div class="about_info">
+                            <h3>Welcome to Petrosa Energia Ltd</h3>
+                            <p class="first_para">At Petrosa Energia Ltd, we are committed to providing reliable, efficient, and sustainable power
+                                solutions tailored to meet diversed energy needs. With a strong focus on quality, innovation, and customer satisfaction,
+                                we deliver comprehensive energy solutions designed to enhance efficiency,reliability, and sustainability.
+                            </p>
+                            <p>Our expertise spans across power generation, renewable energy, energy management, and customized power solutions
+                                for residential, commercial, and industrial applications. We leverage the latest technology and industry best practices to ensure
+                                uninterrupted power supply, minimizing productivity for our clients.
+                            </p>
+                            <p>At Petrosa Energia Ltd, we believe in building long-tem patnerships by offering exceptional service, expert consultation, ans round-the-clock 
+                                support. Whether you're looking for backup power, renewable energy integration, or complete power management solutions, we are your trusted
+                                partner in powering a brighter, more sustainable future.</p>
+                            <a href="{% url 'petrosa_energia_app:contact' %}" class="boxed-btn3">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- about_area_end  -->
+    <!-- features_area_start -->
+    <div class="features_area add_padding">
+            <div class="container">
+                <div class="row">
+                   <div class="col-xl-12">
+                        <div class="section_title text-center mb-50">
+                                <h3>Our Core Values</h3>
+                            </div>
+                   </div>
+                </div>
+                <div class="row no-gutters">
+                    <div class="col-lg-3 col-md-3">
+                        <div class="single_feature text-center">
+                            <div class="icon">
+                                <i class="flaticon-sketch"></i>
+                            </div>
+                            <h3>Innovation</h3>
+                            <p>Continously embracing new technologies to enhance energy efficiency and reliability.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3">
+                        <div class="single_feature text-center">
+                            <div class="icon">
+                                <i class="flaticon-helmet"></i>
+                            </div>
+                            <h3>integrity</h3>
+                            <p>Building trust through transparent and thical business partners.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3">
+                        <div class="single_feature text-center">
+                            <div class="icon">
+                                <i class="flaticon-support"></i>
+                            </div>
+                            <h3>Quality</h3>
+                            <p>Delivering high performance solutions that meet and exceed expectations.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3">
+                        <div class="single_feature text-center">
+                            <div class="icon">
+                                <i class="flaticon-support"></i>
+                            </div>
+                            <h3>Sustainability</h3>
+                            <p>Promoting eco-friendly solutions for a greener and more sustainable future.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- features_area_end -->
+
+
+    <!-- chose_us_area start -->
+    <div class="chose_us_area chose_bg_1">
+        <div class="container">
+            <div class="row justify-content-end">
+                <div class="col-lg-6 col-md-8">
+                    <div class="chose_info">
+                        <h3>Why Choose Us?</h3>
+                        <p class="large_text">
+                            “At Petrosa Energia Ltd, we are committed to delivering reliable and innovative energy solutions that empower your success.”
+                        </p>
+                        <ul class="features_list">
+                            <li>
+                                <i class="fa fa-check-circle"></i>
+                                <strong>Comprehensive Expertise:</strong> Our team possesses extensive experience across various energy sectors, ensuring tailored solutions that meet your unique requirements.
+                            </li>
+                            <li>
+                                <i class="fa fa-check-circle"></i>
+                                <strong>Innovative Technologies:</strong> We leverage cutting-edge technologies to provide efficient and sustainable energy solutions, keeping you ahead in a rapidly evolving industry.
+                            </li>
+                            <li>
+                                <i class="fa fa-check-circle"></i>
+                                <strong>Customer-Centric Approach:</strong> Your satisfaction is our priority. We offer personalized services and support to ensure seamless and effective energy management.
+                            </li>
+                            <li>
+                                <i class="fa fa-check-circle"></i>
+                                <strong>Commitment to Sustainability:</strong> We are dedicated to promoting renewable energy and reducing environmental impact, aligning with global sustainability goals.
+                            </li>
+                        </ul>
+                        <p>
+                            Choose Petrosa Energia Ltd for a partnership that powers your operations with excellence, innovation, and integrity.
+                        </p>
+                        <div class="icon_video">
+                            <!-- Optional: Add a promotional or introductory video link here -->
+                            <!-- <a class="popup-video" href="https://www.youtube.com/watch?v=YourVideoLink"> -->
+                                <!-- <i class="fa fa-caret-right"></i> -->
+                            <!-- </a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- chose_us_area end -->
+    <div class="testimonial_area ">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                            <div class="section_title text-center mb-55">
+                                    <h3>Testimonials</h3>
+                                </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="testmonial_active owl-carousel">
+                            <div class="single_carousel">
+                                <div class="single_testmonial text-center">
+                                    <div class="testmonial_author">
+                                        <div class="thumb">
+                                            <img src="{% static 'img/testimonial/1.png' %}" alt="">
+                                        </div>
+                                        <h4>Jordan Adams</h4>
+                                        <span>Client</span>
+                                    </div>
+                                    <p>“Our program is guided by the developmental milestones which embrace <br>
+                                        the six most important learning domains in education”</p>
+                                </div>
+                            </div>
+                            <div class="single_carousel">
+                                <div class="single_testmonial text-center">
+                                    <div class="testmonial_author">
+                                        <div class="thumb">
+                                            <img src="{% static 'img/testimonial/1.png' %}" alt="">
+                                        </div>
+                                        <h4>Jordan Adams</h4>
+                                        <span>Client</span>
+                                    </div>
+                                    <p>“Our program is guided by the developmental milestones which embrace <br>
+                                        the six most important learning domains in education”</p>
+                                </div>
+                            </div>
+                            <div class="single_carousel">
+                                <div class="single_testmonial text-center">
+                                    <div class="testmonial_author">
+                                        <div class="thumb">
+                                            <img src="{% static 'img/testimonial/1.png' %}" alt="">
+                                        </div>
+                                        <h4>Jordan Adams</h4>
+                                        <span>Client</span>
+                                    </div>
+                                    <p>“Our program is guided by the developmental milestones which embrace <br>
+                                        the six most important learning domains in education”</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!-- contact_us_start  -->
+    <div class="contact_us overlay">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-8 col-md-7">
+                        <div class="contact_text">
+                        <h3>Looking for Reliable Power Solutions and Electrical Services?</h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-5">
+                        <div class="contact_btn">
+                            <a class="boxed-btn3" href="{% url 'petrosa_energia_app:contact' %}">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- contact_us_end -->
+        {% endblock %}
+
+   

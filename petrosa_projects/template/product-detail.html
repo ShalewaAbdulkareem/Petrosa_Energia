@@ -1,0 +1,122 @@
+produt-detail.html
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+  {{ product.product_name }}
+{% endblock title %}
+
+{% block content %}
+    <div class="bradcam_area bradcam_bg_2 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="bradcam_text text-center">
+                        <h3>{{ product.product_name }}</h3>
+                        <p><a href="{% url 'petrosa_energia_app:index' %}">Home</a> / {{ product.product_name }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+
+    <!-- Product Details Section -->
+    <div class="product_details_info">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-10 col-lg-10">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="details_header details_left mt-3">
+                                <h1>{{ product.product_name }}</h1>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="details_header details_right">
+                                
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            <div class="details_left">
+                                <img src="{{ product.image.url }}" class="img-fluid w-100" alt="{{ product.product_name }}">
+                               
+                            </div>
+                        </div>
+
+                        <!-- Additional Information -->
+                        <div class="col-md-6">
+                            <div class="details_right">
+                                <p>{{ product.content|safe }}</p>
+                                <hr>
+                               <!-- <strong>Price : ${{ product.price|floatformat:2 }} |</strong> -->
+                                <strong>Category : {{product.category.name}} |</strong>
+                                <span>In Stock</span>
+                                <strong>{{ product.in_stock|yesno:"Yes,No" }}</strong>
+                            </div>
+                        </div>
+                    </div>
+
+             
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-md-12">
+                <h3>Interested in this Product?</h3>
+                <p>Fill out the form below and we'll get back to you soon!</p>
+                {% if messages %}
+                    <div class="alert alert-success">
+                        {% for message in messages %}
+                            <p style="font-weight: 700;">{{ message }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+                <form method="POST">
+                    {% csrf_token %}
+                    {% for field in form %}
+    <div class="form-group">
+        {{ field.label_tag }}
+        {{ field }}
+        {% if field.errors %}
+            <div class="text-danger">
+                {% for error in field.errors %}
+                    <p>{{ error }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+{% endfor %}
+
+    
+                    
+                    <button class="boxed-btn3 mt-5 mb-5" type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Contact Us Section -->
+    <div class="contact_us overlay">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 col-md-7">
+                    <div class="contact_text">
+                        <h3>Are you looking for a Construction and Industrial Expert?</h3>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-5">
+                    <div class="contact_btn">
+                        <a class="boxed-btn3" href="{% url 'petrosa_energia_app:contact' %}">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+{% endblock %}
