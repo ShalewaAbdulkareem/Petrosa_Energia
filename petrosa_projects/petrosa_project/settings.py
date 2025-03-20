@@ -71,8 +71,10 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'customercare@petrosaglobal.com'
-EMAIL_HOST_PASSWORD = config('EMAIL_PASSWORD')
+EMAIL_HOST_USER = 'ogunburebusayo.j@gmail.com'
+EMAIL_HOST_PASSWORD = 'nwljtaepiuejlsht'
+# EMAIL_HOST_USER = 'customercare@petrosaglobal.com'
+# EMAIL_HOST_PASSWORD = config('EMAIL_PASSWORD')
 
 
 ROOT_URLCONF = 'petrosa_project.urls'

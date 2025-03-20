@@ -9,8 +9,7 @@ from django.utils.html import strip_tags
 from django.core.mail import EmailMessage
 from django.conf import settings
 from django.core.mail import send_mail  # Import send_mail
-
-
+from django.db.models import  Q
 
 
 # Create your views here.
@@ -176,8 +175,14 @@ def quick_quote(request, product_slug):
             except Exception as e:
                 messages.error(request, f"Failed to send email: {str(e)}")
 
-            return redirect(product.get_absolute_url())  
+            
         else:
             messages.error(request, "There was an error submitting the form. Please try again.")
 
     return render(request, 'quick-quote.html', {'form': form, 'product': product})
+
+
+def search(request):
+	q=request.GET['q']
+	data=Product.objects.filter(product_name__icontains=q).order_by('-id')
+	return render(request,'search.html',{'data':data})
