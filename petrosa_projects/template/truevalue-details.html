@@ -28,11 +28,7 @@
                 <h2>{{ product.name }}</h2>
                 <p>{{ product.description|safe }}</p>
                 <h4 class="text-primary">Price: ${{ product.price }}</h4>
-<<<<<<< HEAD:template/truevalue-details.html
-                <a href="{% url 'petrosa_app:quick_quote' product_slug=product.slug %}" class="btn btn-warning">Quick Quote</a>
-=======
                 <a href="{% url 'petrosa_energia_app:quick_quote' product_slug=product.slug %}" class="btn btn-warning">Quick Quote</a>
->>>>>>> bd44e241783b19baed4c0b61fb862be65bad8cb4:petrosa_projects/template/truevalue-details.html
             </div>
         </div>
     </div>

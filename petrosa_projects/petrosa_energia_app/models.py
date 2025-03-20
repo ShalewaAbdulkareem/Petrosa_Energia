@@ -35,6 +35,10 @@ class Product(models.Model):
         indexes = [
             models.Index(fields=['slug', 'category']),
         ]
+        
+    def show_image1(self):
+        if self.image:
+         return self.image.url
 
 class ProductInterest(models.Model):
     product = models.ForeignKey(Product,on_delete= models.CASCADE)

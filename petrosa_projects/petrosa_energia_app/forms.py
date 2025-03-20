@@ -11,7 +11,7 @@ class ProductInterestForm(forms.ModelForm):
             'product': forms.HiddenInput(),
             'name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Your Name'}),
             'email': forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Your Email'}),
-            'address': forms.TextInput(attrs={'placeholder': 'Enter your address'}),
+            'address': forms.TextInput(attrs={'placeholder': 'Enter your address', 'class': 'form-control',}),
             'company_name':forms.TextInput(attrs={'class':'form-control', 'placeholder':'Company Name'}),
             'phone_number': forms.NumberInput(attrs={'class' : 'form-control', 'placeholder': 'Your Phone Number'}),
             'message': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Your Message', 'rows': 4}),
