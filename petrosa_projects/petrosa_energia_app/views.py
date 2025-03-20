@@ -128,7 +128,6 @@ def project(request):
     }
     return render(request, 'project.html', context)
 
-
 def project_details(request):
     return render(request, 'project_details.html')
 

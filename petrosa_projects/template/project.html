@@ -8,6 +8,75 @@
 
 {% block content %}
 
+<style>
+    /* Banner wrapper with a lighter background (or any color/image you want) */
+.projects_banner_area {
+  background-color: #f5f5f5; /* or your preferred color */
+  padding: 60px 0;          /* top and bottom spacing */
+  margin-top: 80px;         /* if you need spacing under the header */
+}
+
+/* Center the content and adjust text styles */
+.projects_banner_content {
+  text-align: center;
+  color: #333; /* text color */
+}
+
+.projects_title {
+  font-size: 48px;     /* big title */
+  font-weight: 700;    /* bold */
+  margin-bottom: 10px; /* spacing under the title */
+}
+
+/* Optional underline to mimic the screenshot’s style */
+.projects_underline {
+  width: 80px;
+  border: 2px solid #ff0000; /* or any accent color you want */
+  margin: 0 auto 15px;       /* center it and give bottom spacing */
+}
+
+/* Subtext or breadcrumb style */
+.projects_subtitle {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 0;
+}
+
+/* If you have a category label like "IPP" */
+.projects_category {
+  display: inline-block;
+  background-color: #eee;
+  color: #333;
+  padding: 5px 10px;
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+/* Example project card styling */
+.project_card {
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.project_card h3 {
+  margin-top: 15px;
+  font-size: 20px;
+  font-weight: 600;
+}
+.project_card p {
+  margin-bottom: 15px;
+  color: #555;
+}
+.read_more {
+  color: #0066cc;
+  text-decoration: none;
+  font-weight: 600;
+}
+.read_more:hover {
+  text-decoration: underline;
+}
+
+</style>
 
   <!-- bradcam_area  -->
   <div class="bradcam_area bradcam_bg_2 mt-5">
@@ -24,108 +93,48 @@
     </div>
     <!--/ bradcam_area  -->
     <!-- gallery_area-START -->
-    <div class="gallery_area add_padding">
+    <div class="projects_banner_area">
         <div class="container">
-            <!-- <div class="gallery_nav">
-                <div class="row align-items-center">
-                    <div class="col-lg-12 col-md-12">
-                        <div class="portfolio-menu mb-50 text-center">
-                            <button class="active" data-filter="*">All</button>
-                            <button data-filter=".cat1">Solar products</button>
-                            <button data-filter=".cat2">Electrical panels</button>
-                            <button data-filter=".cat3">Electro Mechanical installations</button>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-        </div>
-        <div class="container-fluid p-0">
-            <div class="row grid no-gutters">
-                {% for all_project in all_project %}
-                <div class="col-xl-3 col-lg-3 col-md-6 grid-item cat3 cat3">
-                    <div class="single_gallery">
-                        <div class="thumb">
-                            <img src="{{all_project.image.url}}" alt="">
-                        </div>
-                        <div class="gallery_hover">
-                            <div class="hover_inner d-flex align-items-center justify-content-between">
-                                <h3>{{all_project.name}}</h3>
-                                <div class="icon">
-                                    <a href="project_details.html">
-                                        <i class="ti-angle-right"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
+          <div class="row align-items-center">
+            <div class="col-xl-12">
+              <div class="projects_banner_content text-center">
+                <!-- The main title -->
+                <h1 class="projects_title">Our Projects</h1>
+                <!-- Optional underline -->
+                <hr class="projects_underline" />
+                <!-- Breadcrumb or sub-label -->
+                <p class="projects_subtitle">
+                  <a href="{% url 'petrosa_energia_app:index' %}">Home</a> / Projects
+                </p>
+                <!-- Or if you have something like "IPP" as a category -->
+                <!-- <span class="projects_category">IPP</span> -->
+              </div>
             </div>
+          </div>
         </div>
-    </div>
-    <!-- gallery_area-END -->
-
-    <!-- more_pro_btn_start  -->
-    <!-- <a href="#" class="more_pro_btn">load more</a> -->
-    <!-- more_pro_btn_end  -->
-
-
-    <div class="testimonial_area ">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-12">
-                            <div class="section_title text-center mb-55">
-                                    <h3>Testimonials</h3>
-                                </div>
-                    </div>
-                </div>
-                <!-- <div class="row">
-                    <div class="col-xl-12">
-                        <div class="testmonial_active owl-carousel">
-                            <div class="single_carousel">
-                                <div class="single_testmonial text-center">
-                                    <div class="testmonial_author">
-                                        <div class="thumb">
-                                            <img src="{% static 'img/testimonial/1.png' %}" alt="">
-                                        </div>
-                                        <h4>Jordan Adams</h4>
-                                        <span>Client</span>
-                                    </div>
-                                    <p>“Our program is guided by the developmental milestones which embrace <br>
-                                        the six most important learning domains in education”</p>
-                                </div>
-                            </div>
-                            <div class="single_carousel">
-                                <div class="single_testmonial text-center">
-                                    <div class="testmonial_author">
-                                        <div class="thumb">
-                                            <img src="{% static 'img/testimonial/1.png' %}" alt="">
-                                        </div>
-                                        <h4>Jordan Adams</h4>
-                                        <span>Client</span>
-                                    </div>
-                                    <p>“Our program is guided by the developmental milestones which embrace <br>
-                                        the six most important learning domains in education”</p>
-                                </div>
-                            </div>
-                            <div class="single_carousel">
-                                <div class="single_testmonial text-center">
-                                    <div class="testmonial_author">
-                                        <div class="thumb">
-                                            <img src="{% static 'img/testimonial/1.png' %}" alt="">
-                                        </div>
-                                        <h4>Jordan Adams</h4>
-                                        <span>Client</span>
-                                    </div>
-                                    <p>“Our program is guided by the developmental milestones which embrace <br>
-                                        the six most important learning domains in education”</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
+      </div>
+      
+      <!-- Content for the projects (cards, grids, etc.) goes here -->
+      <div class="container my-5">
+        <div class="row">
+          {% for all_project in all_project %}
+            <div class="col-md-6 mb-4">
+              <!-- Option 1: Directly place the image in the col -->
+              <img
+                src="{{ all_project.image.url }}"
+                alt="Project Image"
+                class="img-fluid w-100"
+              />
+              <h3>{{ all_project.name }}</h3>
+              <p>{{ all_project.description }}</p>
+              <a href="#" class="read_more">READ MORE</a>
             </div>
+          {% endfor %}
         </div>
+      </div>
+      
+    <!-- galery_area_END -->
+   
     
 {% endblock %}
  

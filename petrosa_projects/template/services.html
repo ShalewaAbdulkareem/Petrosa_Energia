@@ -30,9 +30,9 @@
                 Our team combine expertise, reliability and professionalism to provide top-notch solutions.
                 You can trust us to exceed your expectations and deliver value every step away.
             </p>
-            <div class="row">
+            <div class="row py-5">
                 {% for our_service in our_service %}
-                <div class="col-md-6 col-lg-4">
+                <div class="col-md-6 col-lg-6">
                     <div class="single_service">
                         <div class="thumb">
                             <img src="{{our_service.image.url}}" alt="">
@@ -42,7 +42,7 @@
                                 <h3>{{our_service.name}}</h3>
                             </a>
                             <p>{{our_service.content |safe}}</p>
-                            <a class="d-flex align-items-center" href="#">More <i class="ti-angle-right"></i>
+                            <!-- <a class="d-flex align-items-center" href="#">More <i class="ti-angle-right"></i> -->
                             </a>
                         </div>
                     </div>
