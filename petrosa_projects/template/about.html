@@ -31,6 +31,17 @@
     font-size: 20px;
     color: #555;
 }
+/* feature */
+.single_feature {
+    font-size: 0.9em; /* Reduces overall text size */
+    padding: 10px;    /* Adjust padding if needed */
+}
+
+.single_feature .img img {
+    max-width: 70%;   /* Reduce the image size */
+    height: auto;     /* Maintain aspect ratio */
+    margin: 0 auto;   /* Center the image */
+}
 
 </style>
   <!-- bradcam_area  -->
@@ -76,7 +87,7 @@
                             <p>At Petrosa Energia Ltd, we believe in building long-tem patnerships by offering exceptional service, expert consultation, ans round-the-clock 
                                 support. Whether you're looking for backup power, renewable energy integration, or complete power management solutions, we are your trusted
                                 partner in powering a brighter, more sustainable future.</p>
-                            <a href="{% url 'petrosa_energia_app:contact' %}" class="boxed-btn3">Contact Us</a>
+                            <a href="{% url 'petrosa_energia_app:contact' %}" class="btn btn-warning mt-3">Contact Us</a>
                         </div>
                     </div>
                 </div>
@@ -144,12 +155,6 @@
                         <p>
                             Choose Petrosa Energia Ltd for a partnership that powers your operations with excellence, innovation, and integrity.
                         </p>
-                        <div class="icon_video">
-                            <!-- Optional: Add a promotional or introductory video link here -->
-                            <!-- <a class="popup-video" href="https://www.youtube.com/watch?v=YourVideoLink"> -->
-                                <!-- <i class="fa fa-caret-right"></i> -->
-                            <!-- </a> -->
-                        </div>
                     </div>
                 </div>
             </div>
@@ -170,8 +175,8 @@
                 <div class="row no-gutters">
                     <div class="col-lg-3 col-md-3">
                         <div class="single_feature text-center">
-                            <div class="icon">
-                                <i class="flaticon-sketch"></i>
+                            <div class="img ">
+                                <img src="{% static 'img/innovation.png' %}" alt="">
                             </div>
                             <h3>Innovation</h3>
                             <p>Continously embracing new technologies to enhance energy efficiency and reliability.</p>
@@ -179,8 +184,8 @@
                     </div>
                     <div class="col-lg-3 col-md-3">
                         <div class="single_feature text-center">
-                            <div class="icon">
-                                <i class="flaticon-helmet"></i>
+                            <div class="img">
+                                <img src="{% static 'img/integrity.png' %}" alt="">
                             </div>
                             <h3>integrity</h3>
                             <p>Building trust through transparent and thical business partners.</p>
@@ -188,8 +193,8 @@
                     </div>
                     <div class="col-lg-3 col-md-3">
                         <div class="single_feature text-center">
-                            <div class="icon">
-                                <i class="flaticon-support"></i>
+                            <div class="img">
+                                <img src="{% static 'img/quality.png' %}" alt="">
                             </div>
                             <h3>Quality</h3>
                             <p>Delivering high performance solutions that meet and exceed expectations.</p>
@@ -197,8 +202,8 @@
                     </div>
                     <div class="col-lg-3 col-md-3">
                         <div class="single_feature text-center">
-                            <div class="icon">
-                                <i class="flaticon-support"></i>
+                            <div class="img">
+                                <img src="{% static 'img/sustainability.png' %}" alt="">
                             </div>
                             <h3>Sustainability</h3>
                             <p>Promoting eco-friendly solutions for a greener and more sustainable future.</p>

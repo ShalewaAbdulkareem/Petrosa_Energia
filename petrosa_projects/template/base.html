@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="{% static 'css/nice-select.css' %}">
     <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
     <link rel="stylesheet" href="{% static 'css/slicknav.css' %}">
+    <link rel="stylesheet" href="{% static 'https://www.flaticon.com/uicons/get-started' %}">
 
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <!-- <link rel="stylesheet" href="css/responsive.css"> -->
@@ -153,8 +154,11 @@
                                                   {% endfor %}
                                                 </ul>
                                               </li>
+                                              <li><a href="{% url 'petrosa_energia_app:project' %}"
+                                                class="{% if request.resolver_match.url_name == 'project' %}active{% endif %}">Projects</a>
+                                        </li>
                                               
-                                            <li>
+                                            <!-- <li>
                                                 <a href="#"
                                                     class="{% if request.resolver_match.url_name in 'project project_details' %}active{% endif %}">Project
                                                     <i class="ti-angle-down"></i></a>
@@ -166,8 +170,8 @@
                                                             class="{% if request.resolver_match.url_name == 'project_details' %}active{% endif %}">Project
                                                             Details</a></li>
                                                 </ul>
-                                            </li>
-                                            <li>
+                                            </li> -->
+                                            <!-- <li>
                                                 <a href="#"
                                                     class="{% if request.resolver_match.url_name in 'blog single_blog' %}active{% endif %}">Blog
                                                     <i class="ti-angle-down"></i></a>
@@ -179,7 +183,7 @@
                                                             class="{% if request.resolver_match.url_name == 'single_blog' %}active{% endif %}">Single
                                                             Blog</a></li>
                                                 </ul>
-                                            </li>
+                                            </li> -->
                                             <li><a href="{% url 'petrosa_energia_app:truevalue' %}"
                                                 class="{% if request.resolver_match.url_name == 'truevalue' %}active{% endif %}">TrueValue</a>
                                         </li>

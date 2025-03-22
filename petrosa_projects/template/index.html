@@ -8,6 +8,134 @@
 
 {% block content %}
 
+<style>
+.features_area {
+  background-color: #f9f9f9;
+  padding: 60px 0;
+}
+
+.feature_item {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.feature_item .img img {
+  max-width: 20%;      /* Reduce image size */
+  height: auto;
+  margin: 0 auto 15px;  /* Center the image and add bottom spacing */
+}
+
+.feature_item h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.feature_item p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.6;
+}
+
+
+/* why choose us */
+.chose_us_area {
+  background: url("{% static 'img/backgrounds/chose-bg.jpg' %}") center center/cover no-repeat; /* Optional background image */
+  padding: 80px 0;
+  position: relative;
+  color: #fff;
+}
+
+.chose_us_area::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(248, 239, 239, 0.5); /* Dark overlay for contrast */
+  z-index: 1;
+}
+
+.chose_info {
+  position: relative;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.1); /* Light transparent background for the text block */
+  padding: 40px;
+  border-radius: 10px;
+}
+
+.chose_info h3 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.chose_info p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.chose_info .btn {
+  padding: 10px 25px;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+/* project section */
+.project_card {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project_card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.project_card img {
+    transition: opacity 0.3s ease;
+}
+
+.project_card:hover img {
+    opacity: 0.9;
+}
+
+.project_overlay {
+    background: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project_card:hover .project_overlay {
+    opacity: 1;
+}
+
+.gallery_title {
+    font-size: 2rem;
+    line-height: 1.5;
+    color: #333;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    border-radius: 30px;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+}
+
+.text-white {
+    font-size: 1rem;
+}
+
+
+</style>
     <!-- slider_area_start -->
     <div class="slider_area">
         <div class="slider_active owl-carousel">
@@ -18,7 +146,7 @@
                             <div class="slider_text text-center">
                                 <h3>Welcome to Petrosa Energia Ltd</h3>
                                 <p>Your trusted partner for Generators,Solar Products and Electrical Energy.</p>
-                                <a href="services.html" class="boxed-btn3">Our Services</a>
+                                <!-- <a href="services.html" class="boxed-btn3">Our Services</a> -->
                             </div>
                         </div>
                     </div>
@@ -31,7 +159,7 @@
                             <div class="slider_text text-center">
                                 <h3>Welcome to Petrosa Energia Ltd</h3>
                                 <p>Your trusted partner for Generators,Solar Products and Electrical Energy.</p>
-                                <a href="services.html" class="boxed-btn3">Our Services</a>
+                                <!-- <a href="services.html" class="btn btn-warning mt-3">Our Services</a> -->
                             </div>
                         </div>
                     </div>
@@ -44,7 +172,7 @@
                             <div class="slider_text text-center">
                                 <h3>Welcome to Petrosa Energia Ltd</h3>
                                 <p>Your trusted partner for Generators,Solar Products and Electrical Energy.</p>
-                                <a href="services.html" class="boxed-btn3">Our Services</a>
+                                <!-- <a href="services.html" class="boxed-btn3">Our Services</a> -->
                             </div>
                         </div>
                     </div>
@@ -53,82 +181,6 @@
         </div>
     </div>
     <!-- slider_area_end -->
-
-    <!-- features_area_start -->
-    <div class="features_area mt-5">
-        <div class="container">
-            <h2 class="text-center text-dark">OUR KEY FEATURES</h2>
-            <div class="row no-gutters">
-                <div class="col-lg-4 col-md-4">
-                    <div class="single_feature text-center">
-                        <div class="icon">
-                            <i class="flaticon-sketch"></i>
-                        </div>
-                        <h3>ENERGY & FACILITY MANAGEMENT.</h3>
-                        <p>Our goal is to implement innovtive, cost-effective relevant, dependable solutions
-                            and best practices that will maximize efficiency in the face of rising
-                            operational costs.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4">
-                    <div class="single_feature text-center">
-                        <div class="icon">
-                            <i class="flaticon-helmet"></i>
-                        </div>
-                        <h3>Sustanability, Efficiency, Reliablity.</h3>
-                        <p>By customizing our O&M services option, we can stabilize or lower your overall
-                            operating cost at residential estats, production & business installations.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4">
-                    <div class="single_feature text-center">
-                        <div class="icon">
-                            <i class="flaticon-support"></i>
-                        </div>
-                        <h3>Pure, Simple & Innovative.</h3>
-                        <p>Solving problems with innovative and intelligent products & services is at the heart
-                            of what we do. Making business refreshingly simple, costing-effective and pleasant for
-                            our customers is how we do it.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4">
-                    <div class="single_feature text-center">
-                        <div class="icon">
-                            <i class="flaticon-support"></i>
-                        </div>
-                        <h3>Flexibility is key.</h3>
-                        <p>Our team of experts works with your management team to ensure your energy
-                            system infrastructure is maintained efficiently and safely.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4">
-                    <div class="single_feature text-center">
-                        <div class="icon">
-                            <i class="flaticon-support"></i>
-                        </div>
-                        <h3>Operation & Maintenance </h3>
-                        <p>Operation & Maintence services with numerous partnerships worldwide, Petrosa Energia Ltd
-                            recognizes that growing customer demands, competitive pressures and hard
-                            economic realities may have robbed your business of the very resources you need
-                            to keep pace.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4">
-                    <div class="single_feature text-center">
-                        <div class="icon">
-                            <i class="flaticon-support"></i>
-                        </div>
-                        <h3>Petrosa Energia Ltd Capabilities.</h3>
-                        <p>Our global team of experienced energy enginners will uncover areas of inefficiency
-                            and process bottlenecks, and provide engineering design, project management, add
-                            payback calculations to illustrate your return on investment.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- features_area_end -->
 
     <!-- about_area_start  -->
     <div class="about_area">
@@ -164,6 +216,76 @@
     </div>
     <!-- about_area_end  -->
 
+<!-- Features Area Start -->
+<div class="features_area mt-5">
+    <div class="container">
+      <h2 class="text-center text-dark mb-4">OUR KEY FEATURES</h2>
+      <div class="row">
+        <!-- Feature 1 -->
+        <div class="col-md-4">
+          <div class="feature_item text-center">
+            <div class="img">
+              <img src="{% static 'img/energy.png' %}" alt="Energy & Facility Management">
+            </div>
+            <h3>ENERGY &amp; FACILITY MANAGEMENT</h3>
+            <p>Our goal is to implement innovative, cost-effective, and dependable solutions that maximize efficiency amid rising operational costs.</p>
+          </div>
+        </div>
+        <!-- Feature 2 -->
+        <div class="col-md-4">
+          <div class="feature_item text-center">
+            <div class="img">
+              <img src="{% static 'img/sustainability.png' %}" alt="Sustainability, Efficiency, Reliability">
+            </div>
+            <h3>SUSTAINABILITY, EFFICIENCY, RELIABILITY</h3>
+            <p>We customize our O&amp;M services to stabilize or lower overall operating costs across various installations.</p>
+          </div>
+        </div>
+        <!-- Feature 3 -->
+        <div class="col-md-4">
+          <div class="feature_item text-center">
+            <div class="img">
+              <img src="{% static 'img/innovation.png' %}" alt="Pure, Simple &amp; Innovative">
+            </div>
+            <h3>PURE, SIMPLE &amp; INNOVATIVE</h3>
+            <p>Our intelligent products and services make business refreshingly simple, cost-effective, and innovative.</p>
+          </div>
+        </div>
+        <!-- Feature 4 -->
+        <div class="col-md-4">
+          <div class="feature_item text-center">
+            <div class="img">
+              <img src="{% static 'img/flexible.png' %}" alt="Flexibility Is Key">
+            </div>
+            <h3>FLEXIBILITY IS KEY</h3>
+            <p>Our team collaborates with your management to ensure your energy system infrastructure is maintained efficiently and safely.</p>
+          </div>
+        </div>
+        <!-- Feature 5 -->
+        <div class="col-md-4">
+          <div class="feature_item text-center">
+            <div class="img">
+              <img src="{% static 'img/maiantenance.png' %}" alt="Operation &amp; Maintenance">
+            </div>
+            <h3>OPERATION &amp; MAINTENANCE</h3>
+            <p>Our global partnerships enable us to provide O&amp;M services that meet growing customer demands and competitive pressures.</p>
+          </div>
+        </div>
+        <!-- Feature 6 -->
+        <div class="col-md-4">
+          <div class="feature_item text-center">
+            <div class="img">
+              <img src="{% static 'img/capability.png' %}" alt="Our Capabilities">
+            </div>
+            <h3>OUR CAPABILITIES</h3>
+            <p>Our experienced energy engineers uncover inefficiencies and provide design, project management, and ROI analysis for your investment.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Features Area End -->
+  
     <!-- service_area_start  -->
     <div class="service_area">
         <div class="container">
@@ -205,70 +327,65 @@
     </div>
     <!-- service_area_end  -->
 
-    <!-- gallery_area-START -->
-    <div class="gallery_area">
-        <div class="container">
-            <div class="gallery_nav">
-                <div class="row align-items-center">
-                    <div class="col-lg-8 col-md-6">
-                        <h3 class="gallery_title">Take a look Some of our <br>
-                            recently completed projects</h3>
-                    </div>
-                   
-                </div>
-            </div>
+<!-- gallery_area-START -->
+<div class="gallery_area py-5">
+    <div class="container">
+        <div class="gallery_nav text-center mb-5">
+            <h3 class="gallery_title font-weight-bold">
+                Take a look at some of our <br> recently completed projects
+            </h3>
         </div>
-        <div class="container-fluid p-0">
-            <div class="row grid no-gutters">
-                <div class="col-xl-3 col-lg-3 col-md-6 grid-item cat3 cat3">
-                    <div class="single_gallery">
-                        <div class="thumb">
-                            <img src="{% static 'img/gallery/1.png' %}" alt="">
-                        </div>
-                        <div class="gallery_hover">
-                            <div class="hover_inner d-flex align-items-center justify-content-between">
-                                <h3>Maintenance & Repair</h3>
-                                <div class="icon">
-                                    <a href="project_details.html">
-                                        <i class="ti-angle-right"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+        <div class="row g-4">
+            {% for project in featured_projects %}
+            <div class="col-lg-4 col-md-6">
+                <div class="project_card position-relative shadow rounded overflow-hidden">
+                    <!-- Project Image -->
+                    <img
+                        src="{{ project.image.url }}"
+                        alt="{{ project.name }}"
+                        class="img-fluid w-100"
+                        style="height: 250px; object-fit: cover;"
+                    />
+                    <!-- Overlay -->
+                    <div class="project_overlay position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center text-white text-center p-3">
+                        <h4 class="mb-2">{{ project.name }}</h4>
+                        <p class="mb-3">{{ project.description|truncatewords:15 }}</p>
                     </div>
                 </div>
             </div>
+            {% endfor %}
         </div>
-    </div>
-    <!-- gallery_area-END -->
-
-    <!-- more_pro_btn_start  -->
-    <a href="{% url 'petrosa_energia_app:project' %}" class="more_pro_btn">More Projects</a>
-    <!-- more_pro_btn_end  -->
-
-    <!-- chose_us_area start -->
-    <div class="chose_us_area chose_bg_1">
-        <div class="container">
-            <div class="row justify-content-end">
-                <div class="col-lg-6 col-md-8">
-                    <div class="chose_info">
-                        <h3>Why Choose Us?</h3>
-                        <p class="lasrge_text">
-                            “Construction is a full service construction company offering building solutions from start
-                            to finish. Our staff has been operating on NYC for ten years.
-                        </p>
-                        <p>There are many variations of passages of lorem Ipsum available, but the majority have
-                            suffered alteration in some form, by injected.</p>
-                        <div class="icon_video">
-                            <!-- <a class="popup-video" href="https://www.youtube.com/watch?v=Spi1vvZgLXw"> -->
-                                <i class="fa fa-caret-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <!-- More Projects Button -->
+        <div class="text-center mt-5">
+            <a href="{% url 'petrosa_energia_app:project' %}" class="btn btn-primary btn-lg">
+                View More Projects
+            </a>
         </div>
     </div>
+</div>
+<!-- gallery_area-END -->
+
+
+<!-- Why Choose Us Section -->
+<div class="chose_us_area">
+    <div class="container">
+      <div class="row justify-content-end">
+        <div class="col-lg-6 col-md-8">
+          <div class="chose_info">
+            <h3>Why Choose Us?</h3>
+            <p class="lead">
+              At Petrosa Energia Ltd, we deliver complete power solutions with unmatched expertise and innovation. Our dedicated team works closely with you to create tailored, cost-effective solutions that ensure efficiency and reliability.
+            </p>
+            <p>
+              With decades of experience and a global network of partners, we empower businesses and communities with services designed to overcome today's energy challenges. Discover the difference our passion and commitment can make.
+            </p>
+            <a href="{% url 'petrosa_energia_app:about' %}" class="btn btn-primary mt-3">Learn More About Us</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
     <!-- chose_us_area end -->
     <div class="testimonial_area ">
         <div class="container">

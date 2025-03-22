@@ -15,6 +15,13 @@
   padding: 60px 0;          /* top and bottom spacing */
   margin-top: 80px;         /* if you need spacing under the header */
 }
+/* Images */
+.project-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
 
 /* Center the content and adjust text styles */
 .projects_banner_content {
@@ -27,6 +34,9 @@
   font-weight: 700;    /* bold */
   margin-bottom: 10px; /* spacing under the title */
 }
+.project-card:hover img {
+  transform: scale(1.05); /* Zoom effect on hover */
+}
 
 /* Optional underline to mimic the screenshot’s style */
 .projects_underline {
@@ -34,6 +44,11 @@
   border: 2px solid #ff0000; /* or any accent color you want */
   margin: 0 auto 15px;       /* center it and give bottom spacing */
 }
+/* Hover effect */
+.project_overlay:hover {
+    transform: translate(-50%, -60%); /* Moves the text slightly upwards on hover */
+}
+
 
 /* Subtext or breadcrumb style */
 .projects_subtitle {
@@ -53,11 +68,35 @@
 }
 
 /* Example project card styling */
-.project_card {
-  background-color: #fff;
-  padding: 20px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+/* Individual project card */
+.project-card {
+  position: relative;
+  width: calc(50% - 10px); /* Two cards per row */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
 }
+
+/* Text overlay */
+.project-card .overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.7); /* Transparent black overlay */
+  color: #fff;
+  text-align: left;
+  transition: background 0.3s ease-in-out;
+}
+.project-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Space between cards */
+  padding: 20px;
+  background-color: #ffff; /* Dark background like Mikano */
+}
+
 .project_card h3 {
   margin-top: 15px;
   font-size: 20px;
@@ -67,14 +106,7 @@
   margin-bottom: 15px;
   color: #555;
 }
-.read_more {
-  color: #0066cc;
-  text-decoration: none;
-  font-weight: 600;
-}
-.read_more:hover {
-  text-decoration: underline;
-}
+
 
 </style>
 
@@ -92,47 +124,30 @@
         </div>
     </div>
     <!--/ bradcam_area  -->
-    <!-- gallery_area-START -->
-    <div class="projects_banner_area">
-        <div class="container">
-          <div class="row align-items-center">
-            <div class="col-xl-12">
-              <div class="projects_banner_content text-center">
-                <!-- The main title -->
-                <h1 class="projects_title">Our Projects</h1>
-                <!-- Optional underline -->
-                <hr class="projects_underline" />
-                <!-- Breadcrumb or sub-label -->
-                <p class="projects_subtitle">
-                  <a href="{% url 'petrosa_energia_app:index' %}">Home</a> / Projects
-                </p>
-                <!-- Or if you have something like "IPP" as a category -->
-                <!-- <span class="projects_category">IPP</span> -->
-              </div>
-            </div>
+    
+      <!-- Content for the projects (cards, grids, etc.) goes here -->
+      <div class="container my-5">
+  <div class="row">
+    {% for project in all_project %}
+      <div class="col-md-6 mb-4">
+        <div class="project_card position-relative">
+          <!-- The Image -->
+          <img
+            src="{{ project.image.url }}"
+            alt="{{ project.name }}"
+          />
+          <!-- The Overlay with text -->
+          <div class="project_overlay">
+            <h3>{{ project.name }}</h3>
+            <p>{{ project.description }}</p>
+            <!-- <a href="#" class="read_more">READ MORE</a> -->
           </div>
         </div>
       </div>
-      
-      <!-- Content for the projects (cards, grids, etc.) goes here -->
-      <div class="container my-5">
-        <div class="row">
-          {% for all_project in all_project %}
-            <div class="col-md-6 mb-4">
-              <!-- Option 1: Directly place the image in the col -->
-              <img
-                src="{{ all_project.image.url }}"
-                alt="Project Image"
-                class="img-fluid w-100"
-              />
-              <h3>{{ all_project.name }}</h3>
-              <p>{{ all_project.description }}</p>
-              <a href="#" class="read_more">READ MORE</a>
-            </div>
-          {% endfor %}
-        </div>
-      </div>
-      
+    {% endfor %}
+  </div>
+</div>
+
     <!-- galery_area_END -->
    
     

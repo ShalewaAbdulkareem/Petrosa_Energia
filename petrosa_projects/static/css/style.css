@@ -1805,6 +1805,7 @@ h3 {
 /* line 74, ../../Arafath/CL/Cl November/226. Construction/HTML/scss/_about.scss */
 .about_area .about_info .boxed-btn3 {
   margin-top: 45px;
+  background-color:rgb(102, 102, 230)
 }
 
 /* line 78, ../../Arafath/CL/Cl November/226. Construction/HTML/scss/_about.scss */
@@ -2449,7 +2450,7 @@ h3 {
   text-align: center;
   line-height: 70px;
   font-size: 25px;
-  color: #F0542C;
+  color: blue !important;
 }
 
 /* line 42, ../../Arafath/CL/Cl November/226. Construction/HTML/scss/_choseus.scss */

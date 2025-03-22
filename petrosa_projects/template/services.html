@@ -7,54 +7,149 @@
 {% endblock title %}
 
 {% block content %}
-    <!-- bradcam_area  -->
-    <div class="bradcam_area bradcam_bg_2">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-12">
-                    <div class="bradcam_text text-center">
-                        <h3>Services</h3>
-                        <p><a href="{% url 'petrosa_energia_app:index' %}">Home</a> / Services</p>
-                    </div>
+
+<style>
+    /* Banner wrapper with a lighter background (or any color/image you want) */
+.service_banner_area {
+  background-color: #f5f5f5; /* or your preferred color */
+  padding: 60px 0;          /* top and bottom spacing */
+  margin-top: 80px;         /* if you need spacing under the header */
+}
+
+/* Center the content and adjust text styles */
+.service_banner_content {
+  text-align: center;
+  color: #333; /* text color */
+}
+.service_overlay {
+    position: absolute; /* Position it relative to its nearest positioned ancestor */
+    top: 50%; /* Move it halfway down */
+    left: 50%; /* Move it halfway across */
+    transform: translate(-50%, -50%); /* Center it exactly */
+    color: #fff; /* Text color */
+    text-align: center; /* Center-align the text */
+    padding: 0; /* Remove extra padding */
+    background: none; /* No background */
+    font-size: 18px; /* Adjust text size */
+}
+
+
+
+.service_title {
+  font-size: 48px;     /* big title */
+  font-weight: 700;    /* bold */
+  margin-bottom: 10px; /* spacing under the title */
+}
+
+/* Optional underline to mimic the screenshot’s style */
+.service_underline {
+  width: 80px;
+  border: 2px solid #ff0000; /* or any accent color you want */
+  margin: 0 auto 15px;       /* center it and give bottom spacing */
+}
+
+/* Subtext or breadcrumb style */
+.service_subtitle {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 0;
+}
+
+/* If you have a category label like "IPP" */
+.service_category {
+  display: inline-block;
+  background-color: #eee;
+  color: #333;
+  padding: 5px 10px;
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+/* Example project card styling */
+.service_card {
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.service_overlay h3 {
+    font-size: 28px; /* Increase title size */
+    font-weight: 700; /* Make the title bold */
+}
+.service_overlay p {
+    font-size: 18px; /* Increase the description size */
+    line-height: 1.5; /* Add some spacing between lines */
+}
+/* Hover effect */
+.service_overlay:hover {
+    transform: translate(-50%, -60%); /* Moves the text slightly upwards on hover */
+}
+
+/* .read_more {
+  color: #0066cc;
+  text-decoration: none;
+  font-weight: 600;
+}
+.read_more:hover { */
+  /* text-decoration: underline;
+} */
+
+</style>
+  <!-- bradcam_area  -->
+  <div class="bradcam_area bradcam_bg_2 mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="bradcam_text text-center">
+                    <h3>Services</h3>
+                    <p><a href="{% url 'petrosa_energia_app:index' %}">Home</a> / Services</p>
                 </div>
             </div>
         </div>
     </div>
-    <!--/ bradcam_area  -->
+</div>
+<!--/ bradcam_area  -->
+<section class="services-intro bg-light text-light py-5">
+    <div class="container">
+        <h2 class="text-center">Our Services</h2>
+        <p class="text-center mt-3">
+            At Petrosa Energia Ltd, we specialize in delivering tailored power solutions that ensure reliability, efficiency, and innovation. 
+            With decades of experience, we have successfully powered industries, businesses, and communities across the nation. 
+            Explore our portfolio below to see the transformative projects we've undertaken.
+        </p>
+        <hr class="mt-4">
+    </div>
+</section>
 
     <!-- service_area_start  -->
-    <div class="service_area add_padding">
-        <div class="container">
-            <h1>Commited to excellence</h1>
-            <p>At Petrosa Energia Ltd, we are dedication to delivering exceptional results on every projects.
-                Our team combine expertise, reliability and professionalism to provide top-notch solutions.
-                You can trust us to exceed your expectations and deliver value every step away.
-            </p>
-            <div class="row py-5">
-                {% for our_service in our_service %}
-                <div class="col-md-6 col-lg-6">
-                    <div class="single_service">
-                        <div class="thumb">
-                            <img src="{{our_service.image.url}}" alt="">
-                        </div>
-                        <div class="service_info">
-                            <a href="#">
-                                <h3>{{our_service.name}}</h3>
-                            </a>
-                            <p>{{our_service.content |safe}}</p>
-                            <!-- <a class="d-flex align-items-center" href="#">More <i class="ti-angle-right"></i> -->
-                            </a>
-                        </div>
-                    </div>
+       <!-- Content for the projects (cards, grids, etc.) goes here -->
+       <div class="container my-5">
+        <div class="row">
+          {% for our_service in our_service %}
+            <div class="col-md-6 mb-4">
+              <div class="service_card position-relative">
+                <!-- The Image -->
+                <img
+                  src="{{ our_service.image.url }}"
+                  alt="{{ our_service.name }}"
+                  class="img-fluid w-100"
+                />
+                <!-- The Overlay with text -->
+                <div class="service_overlay">
+                  <h3>{{ our_service.name }}</h3>
+                  <p>{{ our_service.description }}</p>
+                  <!-- <a href="#" class="read_more">READ MORE</a> -->
                 </div>
-                {% endfor %}
+              </div>
             </div>
-
+          {% endfor %}
         </div>
-    </div>
+      </div>
+      
+          <!-- galery_area_END -->
+       
     <!-- service_area_end  -->
     <!-- chose_us_area start -->
-    <div class="chose_us_area chose_bg_1">
+    <!-- <div class="chose_us_area chose_bg_1">
         <div class="container">
             <div class="row justify-content-end">
                 <div class="col-lg-6 col-md-8">
@@ -71,9 +166,9 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- chose_us_area end -->
-    <div class="testimonial_area ">
+    <!-- <div class="testimonial_area ">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-12">
@@ -128,9 +223,9 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
     <!-- contact_us_start  -->
-    <div class="contact_us overlay">
+    <!-- <div class="contact_us overlay">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-8 col-md-7">
@@ -145,7 +240,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- contact_us_end -->
 {% endblock %}
     

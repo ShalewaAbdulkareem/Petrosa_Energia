@@ -14,11 +14,13 @@ from django.db.models import  Q
 
 # Create your views here.
 def index(request):
+    featured_projects = Project_name.objects.all().order_by('-id')[:2]
     brands = Brand.objects.all()
     our_service = Service.objects.all()
     context = {
         'brands': brands,
         'our_service': our_service,
+        'featured_projects': featured_projects,
     }
     return render(request, 'index.html', context)
 
@@ -166,7 +168,7 @@ def quick_quote(request, product_slug):
             html_message = render_to_string("quickquote-mail.html", email_data)
             plain_message = strip_tags(html_message)
             from_email = settings.EMAIL_HOST_USER
-            recipient_list = [settings.EMAIL_HOST_USER]
+            recipient_list = [settings.EMAIL_HOST_USER, 'md@petrosagblobal.com']
 
             try:
                 email_message = EmailMessage(email_subject, plain_message, from_email, recipient_list)
