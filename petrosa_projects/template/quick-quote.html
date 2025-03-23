@@ -17,7 +17,7 @@
 </div>
 
 <div class="container mt-5 mb-5">
-    <h2 class="text-center">Request a Quick Quote</h2>
+    <h2 class="text-center" style="color: #f9ad00; font-weight: 600;">Request a Quick Quote</h2>
 
     {% if messages %}
         {% for message in messages %}
@@ -39,19 +39,19 @@
             </div>
             
             <div class="col-md-6">
-                <label>Product Name</label>
+                <label style="color: #001e4c; font-weight: 600;">Product Name</label>
                 <input type="text" class="form-control" value="{{ product.name }}" readonly>
-                <label>First Name</label>
+                <label style="color: #001e4c; font-weight: 600;">First Name</label>
                 {{ form.first_name }}
-                <label>Last Name</label>
+                <label style="color: #001e4c; font-weight: 600;">Last Name</label>
                 {{ form.last_name }}
-                <label>Email</label>
+                <label style="color: #001e4c; font-weight: 600;">Email</label>
                 {{ form.email }}
-                <label>Company Name</label>
+                <label style="color: #001e4c; font-weight: 600;">Company Name</label>
                 {{ form.company }}
-                <label>Phone</label>
+                <label style="color: #001e4c; font-weight: 600;">Phone</label>
                 {{ form.phone }}
-                <label for="Address"></label>
+                <label style="color: #001e4c; font-weight: 600;" for="Address"></label>
                 {{form.company_address}}
             </div>
             
@@ -64,7 +64,7 @@
         </div>
     
         <div class="text-center mt-4 mb-4">
-            <button type="submit" class="btn btn-primary">Submit Quote Request</button>
+            <button type="submit" class="boxed-btn3">Submit Quote Request</button>
         </div>
     </form>
     

@@ -12,7 +12,7 @@
 
 <style>
     .mission_vision_area {
-    background-color: #f9f9f9;
+    background-color: #001e4c;
     padding: 50px 0;
 }
 .single_mission_vision {
@@ -24,11 +24,11 @@
 }
 .single_mission_vision h3 {
     font-size: 50px;
-    color: #333;
+    color: #f9ad00;
     margin-bottom: 10px;
 }
 .single_mission_vision p {
-    font-size: 20px;
+    font-size: 16px;
     color: #555;
 }
 /* feature */
@@ -66,7 +66,7 @@
             <div class="border_1px">
                 <div class="row align-items-center">
                     <div class="col-xl-6  col-md-6">
-                        <div class="about_thumb">
+                        <div class="about_thumb"  data-aos="fade-up">
                             <img src="{% static 'img/about/about2.png' %}" alt="">
                             <div class="pattern_img d-none d-lg-block">
                                 <img src="{% static 'img/pattern/pattern.svg' %}" alt="">
@@ -74,9 +74,9 @@
                         </div>
                     </div>
                     <div class="col-xl-6 col-md-6">
-                        <div class="about_info">
-                            <h3>Welcome to Petrosa Energia Ltd</h3>
-                            <p class="first_para">At Petrosa Energia Ltd, we are committed to providing reliable, efficient, and sustainable power
+                        <div class="about_info mt-5" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
+                            <h3 style="color: #f9ad00;">Welcome to Petrosa Energia Ltd</h3>
+                            <p >At Petrosa Energia Ltd, we are committed to providing reliable, efficient, and sustainable power
                                 solutions tailored to meet diversed energy needs. With a strong focus on quality, innovation, and customer satisfaction,
                                 we deliver comprehensive energy solutions designed to enhance efficiency,reliability, and sustainability.
                             </p>
@@ -87,7 +87,7 @@
                             <p>At Petrosa Energia Ltd, we believe in building long-tem patnerships by offering exceptional service, expert consultation, ans round-the-clock 
                                 support. Whether you're looking for backup power, renewable energy integration, or complete power management solutions, we are your trusted
                                 partner in powering a brighter, more sustainable future.</p>
-                            <a href="{% url 'petrosa_energia_app:contact' %}" class="btn btn-warning mt-3">Contact Us</a>
+                            <a href="{% url 'petrosa_energia_app:contact' %}" class="boxed-btn3">Contact Us</a>
                         </div>
                     </div>
                 </div>
@@ -103,7 +103,9 @@
             <div class="row">
                 <!-- Mission Section -->
                 <div class="col-lg-6">
-                    <div class="single_mission_vision text-center">
+                    <div class="single_mission_vision text-center" data-aos="flip-left"
+                    data-aos-easing="ease-out-cubic"
+                    data-aos-duration="2000">
                         <h3>Our Mission</h3>
                         <p>To provide innovative and sustainable energy solutions that enhance efficiency, reliability, and environmental responsibility for our customers worldwide.</p>
                         <p>We are committed to delivering cutting-edge power solutions tailored to meet diverse energy needs. By integrating the latest technologies and industry best practices, we strive to minimize energy waste, reduce carbon footprints, and optimize power consumption for a better tomorrow.</p>
@@ -113,7 +115,9 @@
     
                 <!-- Vision Section -->
                 <div class="col-lg-6">
-                    <div class="single_mission_vision text-center">
+                    <div class="single_mission_vision text-center" data-aos="flip-left"
+                    data-aos-easing="ease-out-cubic"
+                    data-aos-duration="3000">
                         <h3>Our Vision</h3>
                         <p>To be a global leader in energy solutions, driving a sustainable future through cutting-edge technology and customer-centric services.</p>
                         <p>We envision a world where energy is accessible, sustainable, and seamlessly integrated into everyday life. Through continuous innovation, strategic partnerships, and a deep commitment to renewable energy, we aim to lead the transformation of the energy sector.</p>
@@ -128,31 +132,32 @@
     <div class="chose_us_area chose_bg_1">
         <div class="container">
             <div class="row justify-content-end">
-                <div class="col-lg-6 col-md-8">
+                <div class="col-lg-6 col-md-8"data-aos="fade-left" data-aos-anchor="#example-anchor" data-aos-offset="1500" data-aos-duration="1500">
                     <div class="chose_info">
-                        <h3>Why Choose Us?</h3>
+                        <h3 style="color: #f9ad00;">Why Choose Us?</h3>
                         <p class="large_text">
                             “At Petrosa Energia Ltd, we are committed to delivering reliable and innovative energy solutions that empower your success.”
                         </p>
                         <ul class="features_list">
-                            <li>
-                                <i class="fa fa-check-circle"></i>
+                            <li data-aos="fade-left" data-aos-anchor="#example-anchor" data-aos-offset="500" data-aos-duration="500">
+                                <i class="fa fa-check-circle" style="color: #f9ad00;"></i>
                                 <strong>Comprehensive Expertise:</strong> Our team possesses extensive experience across various energy sectors, ensuring tailored solutions that meet your unique requirements.
                             </li>
-                            <li>
-                                <i class="fa fa-check-circle"></i>
+                            <li data-aos="fade-left" data-aos-anchor="#example-anchor" data-aos-offset="1000" data-aos-duration="1000">
+                                <i class="fa fa-check-circle" style="color: #f9ad00;"></i>
                                 <strong>Innovative Technologies:</strong> We leverage cutting-edge technologies to provide efficient and sustainable energy solutions, keeping you ahead in a rapidly evolving industry.
                             </li>
-                            <li>
-                                <i class="fa fa-check-circle"></i>
+                            <li data-aos="fade-left" data-aos-anchor="#example-anchor" data-aos-offset="1500" data-aos-duration="1500">
+                                <i class="fa fa-check-circle" style="color: #f9ad00;"></i>
                                 <strong>Customer-Centric Approach:</strong> Your satisfaction is our priority. We offer personalized services and support to ensure seamless and effective energy management.
                             </li>
-                            <li>
-                                <i class="fa fa-check-circle"></i>
+                            <li data-aos="fade-left" data-aos-anchor="#example-anchor" data-aos-offset="2000" data-aos-duration="2000">
+                                <i class="fa fa-check-circle" style="color: #f9ad00;"></i>
                                 <strong>Commitment to Sustainability:</strong> We are dedicated to promoting renewable energy and reducing environmental impact, aligning with global sustainability goals.
                             </li>
                         </ul>
-                        <p>
+                        <br>
+                        <p data-aos="fade-left" data-aos-anchor="#example-anchor" data-aos-offset="2500" data-aos-duration="2500">
                             Choose Petrosa Energia Ltd for a partnership that powers your operations with excellence, innovation, and integrity.
                         </p>
                     </div>
@@ -173,7 +178,7 @@
                    </div>
                 </div>
                 <div class="row no-gutters">
-                    <div class="col-lg-3 col-md-3">
+                    <div class="col-lg-3 col-md-3" data-aos="fade-down" data-aos-anchor="#example-anchor" data-aos-offset="1000" data-aos-duration="1000">
                         <div class="single_feature text-center">
                             <div class="img ">
                                 <img src="{% static 'img/innovation.png' %}" alt="">
@@ -182,7 +187,7 @@
                             <p>Continously embracing new technologies to enhance energy efficiency and reliability.</p>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-3">
+                    <div class="col-lg-3 col-md-3" data-aos="fade-down" data-aos-anchor="#example-anchor" data-aos-offset="2000" data-aos-duration="2000">
                         <div class="single_feature text-center">
                             <div class="img">
                                 <img src="{% static 'img/integrity.png' %}" alt="">
@@ -191,7 +196,7 @@
                             <p>Building trust through transparent and thical business partners.</p>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-3">
+                    <div class="col-lg-3 col-md-3" data-aos="fade-down" data-aos-anchor="#example-anchor" data-aos-offset="3000" data-aos-duration="3000">
                         <div class="single_feature text-center">
                             <div class="img">
                                 <img src="{% static 'img/quality.png' %}" alt="">
@@ -200,7 +205,7 @@
                             <p>Delivering high performance solutions that meet and exceed expectations.</p>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-3">
+                    <div class="col-lg-3 col-md-3" data-aos="fade-down" data-aos-anchor="#example-anchor" data-aos-offset="1000" data-aos-duration="1000">
                         <div class="single_feature text-center">
                             <div class="img">
                                 <img src="{% static 'img/sustainability.png' %}" alt="">

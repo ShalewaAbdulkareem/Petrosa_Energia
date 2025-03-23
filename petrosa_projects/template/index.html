@@ -7,135 +7,6 @@
 {% endblock title %}
 
 {% block content %}
-
-<style>
-.features_area {
-  background-color: #f9f9f9;
-  padding: 60px 0;
-}
-
-.feature_item {
-  margin-bottom: 30px;
-  text-align: center;
-}
-
-.feature_item .img img {
-  max-width: 20%;      /* Reduce image size */
-  height: auto;
-  margin: 0 auto 15px;  /* Center the image and add bottom spacing */
-}
-
-.feature_item h3 {
-  font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-
-.feature_item p {
-  font-size: 14px;
-  color: #555;
-  line-height: 1.6;
-}
-
-
-/* why choose us */
-.chose_us_area {
-  background: url("{% static 'img/backgrounds/chose-bg.jpg' %}") center center/cover no-repeat; /* Optional background image */
-  padding: 80px 0;
-  position: relative;
-  color: #fff;
-}
-
-.chose_us_area::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(248, 239, 239, 0.5); /* Dark overlay for contrast */
-  z-index: 1;
-}
-
-.chose_info {
-  position: relative;
-  z-index: 2;
-  background: rgba(255, 255, 255, 0.1); /* Light transparent background for the text block */
-  padding: 40px;
-  border-radius: 10px;
-}
-
-.chose_info h3 {
-  font-size: 32px;
-  font-weight: 700;
-  margin-bottom: 20px;
-}
-
-.chose_info p {
-  font-size: 16px;
-  line-height: 1.6;
-  margin-bottom: 15px;
-}
-
-.chose_info .btn {
-  padding: 10px 25px;
-  font-size: 16px;
-  border-radius: 5px;
-}
-
-/* project section */
-.project_card {
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.project_card:hover {
-    transform: scale(1.05);
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
-}
-
-.project_card img {
-    transition: opacity 0.3s ease;
-}
-
-.project_card:hover img {
-    opacity: 0.9;
-}
-
-.project_overlay {
-    background: rgba(0, 0, 0, 0.7);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.project_card:hover .project_overlay {
-    opacity: 1;
-}
-
-.gallery_title {
-    font-size: 2rem;
-    line-height: 1.5;
-    color: #333;
-}
-
-.btn-primary {
-    background-color: #007bff;
-    border-color: #007bff;
-    border-radius: 30px;
-}
-
-.btn-primary:hover {
-    background-color: #0056b3;
-    border-color: #004085;
-}
-
-.text-white {
-    font-size: 1rem;
-}
-
-
-</style>
     <!-- slider_area_start -->
     <div class="slider_area">
         <div class="slider_active owl-carousel">
@@ -188,16 +59,16 @@
             <div class="border_1px">
                 <div class="row align-items-center">
                     <div class="col-xl-6  col-md-6">
-                        <div class="about_thumb">
+                        <div class="about_thumb" data-aos="fade-down" data-aos-duration="1500">
                             <img src="{% static 'img/about/about.png' %}" alt="">
                             <div class="pattern_img d-none d-lg-block">
                                 <img src="{% static 'img/pattern/pattern.svg' %}" alt="">
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-6 col-md-6">
+                    <div class="col-xl-6 col-md-6" data-aos="fade-left" data-aos-duration="2000">
                         <div class="about_info">
-                            <h3>Welcome to Petrosa Energia Ltd</h3>
+                            <h3 data-aos="fade-up">Welcome to Petrosa Energia Ltd</h3>
                             <p class="first_para">At Petrosa Energia Ltd, we are committed to providing reliable power solutions
                                 and expert services with a focus on quality and innovation,we deliver comprehensive energy solutions
                                 to meet your power needs. Our team is dedicated to ensuring uninterrupted power with exceptionalservice
@@ -217,12 +88,12 @@
     <!-- about_area_end  -->
 
 <!-- Features Area Start -->
-<div class="features_area mt-5">
+<div class="features_area mt-5" style="background-color: #001e4c;">
     <div class="container">
-      <h2 class="text-center text-dark mb-4">OUR KEY FEATURES</h2>
+      <h2 class="text-center mb-4"  data-aos="fade-up">OUR KEY FEATURES</h2>
       <div class="row">
         <!-- Feature 1 -->
-        <div class="col-md-4">
+        <div class="col-md-4"  data-aos="flip-left" data-aos-duration="500">
           <div class="feature_item text-center">
             <div class="img">
               <img src="{% static 'img/energy.png' %}" alt="Energy & Facility Management">
@@ -232,7 +103,7 @@
           </div>
         </div>
         <!-- Feature 2 -->
-        <div class="col-md-4">
+        <div class="col-md-4"  data-aos="flip-left" data-aos-duration="1000">
           <div class="feature_item text-center">
             <div class="img">
               <img src="{% static 'img/sustainability.png' %}" alt="Sustainability, Efficiency, Reliability">
@@ -242,7 +113,7 @@
           </div>
         </div>
         <!-- Feature 3 -->
-        <div class="col-md-4">
+        <div class="col-md-4"  data-aos="flip-left" data-aos-duration="1500">
           <div class="feature_item text-center">
             <div class="img">
               <img src="{% static 'img/innovation.png' %}" alt="Pure, Simple &amp; Innovative">
@@ -252,7 +123,7 @@
           </div>
         </div>
         <!-- Feature 4 -->
-        <div class="col-md-4">
+        <div class="col-md-4"  data-aos="flip-right" data-aos-duration="1500">
           <div class="feature_item text-center">
             <div class="img">
               <img src="{% static 'img/flexible.png' %}" alt="Flexibility Is Key">
@@ -262,7 +133,7 @@
           </div>
         </div>
         <!-- Feature 5 -->
-        <div class="col-md-4">
+        <div class="col-md-4"  data-aos="flip-right" data-aos-duration="1000">
           <div class="feature_item text-center">
             <div class="img">
               <img src="{% static 'img/maiantenance.png' %}" alt="Operation &amp; Maintenance">
@@ -272,7 +143,7 @@
           </div>
         </div>
         <!-- Feature 6 -->
-        <div class="col-md-4">
+        <div class="col-md-4"  data-aos="flip-right" data-aos-duration="500">
           <div class="feature_item text-center">
             <div class="img">
               <img src="{% static 'img/capability.png' %}" alt="Our Capabilities">
@@ -287,10 +158,10 @@
   <!-- Features Area End -->
   
     <!-- service_area_start  -->
-    <div class="service_area">
+    <div class="service_area mt-4">
         <div class="container">
-            <div class="row">
-                <div class="col-xl-12">
+            <div class="row" >
+                <div class="col-xl-12" >
                     <div class="section_title text-center mb-50">
                         <h3>Our Services</h3>
                     </div>
@@ -357,7 +228,7 @@
         </div>
         <!-- More Projects Button -->
         <div class="text-center mt-5">
-            <a href="{% url 'petrosa_energia_app:project' %}" class="btn btn-primary btn-lg">
+            <a href="{% url 'petrosa_energia_app:project' %}"  class="boxed-btn3">
                 View More Projects
             </a>
         </div>
@@ -370,18 +241,22 @@
 <div class="chose_us_area">
     <div class="container">
       <div class="row justify-content-end">
-        <div class="col-lg-6 col-md-8">
+        <div class="col-lg-6 col-md-4"  data-aos="zoom-in-right">
+            <img src="{% static 'img/about/about2.png' %}" alt="" class="img-fluid">
+           </div>
+        <div class="col-lg-6 col-md-8" data-aos="zoom-out-down" data-aos-duration="2000">
           <div class="chose_info">
-            <h3>Why Choose Us?</h3>
+            <h2>Why Choose Us?</h2>
             <p class="lead">
               At Petrosa Energia Ltd, we deliver complete power solutions with unmatched expertise and innovation. Our dedicated team works closely with you to create tailored, cost-effective solutions that ensure efficiency and reliability.
             </p>
             <p>
               With decades of experience and a global network of partners, we empower businesses and communities with services designed to overcome today's energy challenges. Discover the difference our passion and commitment can make.
             </p>
-            <a href="{% url 'petrosa_energia_app:about' %}" class="btn btn-primary mt-3">Learn More About Us</a>
+            <a href="{% url 'petrosa_energia_app:about' %}"  class="boxed-btn3">Learn More About Us</a>
           </div>
         </div>
+      
       </div>
     </div>
   </div>
