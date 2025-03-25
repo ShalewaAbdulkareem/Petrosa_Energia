@@ -7,6 +7,79 @@
 {% endblock title %}
 
 {% block content %}
+<style>
+    /* Section with background image */
+    .section {
+      background-image: url('your-image-url.jpg'); /* Replace with your image URL */
+      background-size: cover; /* Ensure the image covers the entire section */
+      background-position: center; /* Center the image */
+      padding: 50px 20px; /* Add padding for spacing */
+    }
+    
+    /* Adjust card size and layout */
+    .card {
+      background: #fff;
+      border-radius: 10px; /* Slightly rounder corners */
+      box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); /* Increased shadow for emphasis */
+      padding: 40px; /* Increase padding for a larger feel */
+      text-align: left;
+      display: flex;
+      flex-direction: column; /* Ensure content stacks vertically */
+      justify-content: center; /* Center content vertically */
+      align-items: center; /* Center content horizontally */
+      gap: 20px; /* Add space between icon and text */
+      width: 350px; /* Fixed width */
+      height: 300px; /* Fixed height */
+      position: relative; /* For border placement */
+      border-bottom: 6px solid #f5c800; /* Slightly thicker yellow line */
+      transition: background 0.3s ease, color 0.3s ease; /* Smooth transition effect */
+    }
+    
+    /* Icon placement */
+    .card img {
+      width: 70px; /* Increased icon size */
+      height: 70px;
+      filter: brightness(0) saturate(100%) invert(62%) sepia(73%) saturate(577%) hue-rotate(1deg) brightness(106%) contrast(105%);
+      /* Yellow color filter */
+      flex-shrink: 0; /* Prevent the image from shrinking */
+      transition: filter 0.3s ease; /* Smooth transition for icon color */
+    }
+    
+    /* Text styling */
+    .card p {
+      margin: 0;
+      font-size: 1.2rem; /* Slightly larger font */
+      color: #333;
+      line-height: 1.6;
+      text-align: center; /* Center text */
+      transition: color 0.3s ease; /* Smooth transition for text color */
+    }
+    
+    /* Grid adjustments */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* Ensure exactly 3 cards per row */
+      gap: 40px; /* Increase spacing between cards */
+      justify-content: center; /* Center the grid */
+    }
+    
+    /* Hover effect for card */
+    .card:hover {
+      background: #f5c800; /* Yellow background */
+    }
+    
+    /* Change text color on hover */
+    .card:hover p {
+      color: black; /* Text turns black */
+    }
+    
+    /* Change icon color to white on hover */
+    .card:hover img {
+      filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(360deg) brightness(100%) contrast(100%);
+    }
+    </style>
+    
+    
     <!-- slider_area_start -->
     <div class="slider_area">
         <div class="slider_active owl-carousel">
@@ -86,76 +159,58 @@
         </div>
     </div>
     <!-- about_area_end  -->
-
-<!-- Features Area Start -->
-<div class="features_area mt-5" style="background-color: #001e4c;">
-    <div class="container">
-      <h2 class="text-center mb-4"  data-aos="fade-up">OUR KEY FEATURES</h2>
-      <div class="row">
-        <!-- Feature 1 -->
-        <div class="col-md-4"  data-aos="flip-left" data-aos-duration="500">
-          <div class="feature_item text-center">
-            <div class="img">
-              <img src="{% static 'img/energy.png' %}" alt="Energy & Facility Management">
+    <section class="stats-section" style="background-image: url('{% static "img/cat_bg.jpeg" %}');">
+        <div class="overlay">
+          <h1 class="headline text-center mb-4">Our Features</h1>
+          <div class="container">
+            <div class="row">
+              <!-- Card 1 -->
+              <div class="col-md-4 mb-4">
+                <div class="card text-center">
+                    <img src="{% static 'img/energy.png' %}" alt="Energy & Facility Management" class="img-fluid">
+                  <p>of Coal produced in India is supported by our equipment</p>
+                </div>
+              </div>
+              <!-- Card 2 -->
+              <div class="col-md-4 mb-4">
+                <div class="card text-center">
+                    <img src="{% static 'img/sustainability.png' %}" alt="Sustainability, Efficiency, Reliability" class="img-fluid">
+                  <p>of the world’s largest Coal Mining sites rely on Gmmco for critical support</p>
+                </div>
+              </div>
+              <!-- Card 3 -->
+              <div class="col-md-4 mb-4">
+                <div class="card text-center">
+                  <img src="{% static 'img/innovation.png' %}" alt="Pure, Simple &amp; Innovative" class="img-fluid">
+                  <p>Active engines, gensets and equipment</p>
+                </div>
+              </div>
+              <!-- Card 4 -->
+              <div class="col-md-4 mb-4">
+                <div class="card text-center">
+                <img src="{% static 'img/flexible.png' %}" alt="Flexibility Is Key" class="img-fluid">
+                  <p>of Coal produced in India is supported by our equipment</p>
+                </div>
+              </div>
+              <!-- Card 5 -->
+              <div class="col-md-4 mb-4">
+                <div class="card text-center">
+                    <img src="{% static 'img/maiantenance.png' %}" alt="Operation &amp; Maintenance" class="img-fluid">
+                  <p>of Coal produced in India is supported by our equipment</p>
+                </div>
+              </div>
+              <!-- Card 6 -->
+              <div class="col-md-4 mb-4">
+                <div class="card text-center">
+                    <img src="{% static 'img/capability.png' %}" alt="Our Capabilities" class="img-fluid">
+                  <p>of Coal produced in India is supported by our equipment</p>
+                </div>
+              </div>
             </div>
-            <h3>ENERGY &amp; FACILITY MANAGEMENT</h3>
-            <p>Our goal is to implement innovative, cost-effective, and dependable solutions that maximize efficiency amid rising operational costs.</p>
           </div>
         </div>
-        <!-- Feature 2 -->
-        <div class="col-md-4"  data-aos="flip-left" data-aos-duration="1000">
-          <div class="feature_item text-center">
-            <div class="img">
-              <img src="{% static 'img/sustainability.png' %}" alt="Sustainability, Efficiency, Reliability">
-            </div>
-            <h3>SUSTAINABILITY, EFFICIENCY, RELIABILITY</h3>
-            <p>We customize our O&amp;M services to stabilize or lower overall operating costs across various installations.</p>
-          </div>
-        </div>
-        <!-- Feature 3 -->
-        <div class="col-md-4"  data-aos="flip-left" data-aos-duration="1500">
-          <div class="feature_item text-center">
-            <div class="img">
-              <img src="{% static 'img/innovation.png' %}" alt="Pure, Simple &amp; Innovative">
-            </div>
-            <h3>PURE, SIMPLE &amp; INNOVATIVE</h3>
-            <p>Our intelligent products and services make business refreshingly simple, cost-effective, and innovative.</p>
-          </div>
-        </div>
-        <!-- Feature 4 -->
-        <div class="col-md-4"  data-aos="flip-right" data-aos-duration="1500">
-          <div class="feature_item text-center">
-            <div class="img">
-              <img src="{% static 'img/flexible.png' %}" alt="Flexibility Is Key">
-            </div>
-            <h3>FLEXIBILITY IS KEY</h3>
-            <p>Our team collaborates with your management to ensure your energy system infrastructure is maintained efficiently and safely.</p>
-          </div>
-        </div>
-        <!-- Feature 5 -->
-        <div class="col-md-4"  data-aos="flip-right" data-aos-duration="1000">
-          <div class="feature_item text-center">
-            <div class="img">
-              <img src="{% static 'img/maiantenance.png' %}" alt="Operation &amp; Maintenance">
-            </div>
-            <h3>OPERATION &amp; MAINTENANCE</h3>
-            <p>Our global partnerships enable us to provide O&amp;M services that meet growing customer demands and competitive pressures.</p>
-          </div>
-        </div>
-        <!-- Feature 6 -->
-        <div class="col-md-4"  data-aos="flip-right" data-aos-duration="500">
-          <div class="feature_item text-center">
-            <div class="img">
-              <img src="{% static 'img/capability.png' %}" alt="Our Capabilities">
-            </div>
-            <h3>OUR CAPABILITIES</h3>
-            <p>Our experienced energy engineers uncover inefficiencies and provide design, project management, and ROI analysis for your investment.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Features Area End -->
+      </section>
+      
   
     <!-- service_area_start  -->
     <div class="service_area mt-4">
@@ -184,7 +239,7 @@
                                         <h3>{{our_service.name}}</h3>
                                     </a>
                                     <p>{{our_service.content |safe}}</p>
-                                    <a class="d-flex align-items-center" href="#">More <i class="ti-angle-right"></i>
+                                    <!-- <a class="d-flex align-items-center" href="#">More <i class="ti-angle-right"></i> -->
                                     </a>
                                 </div>
                             </div>

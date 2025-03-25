@@ -205,7 +205,9 @@ h3 {
 .overlay::before {
   position: absolute;
   content: "";
-  background: #001D38;
+  background-image: url(../img/catbg.jpeg) !important;
+  background-repeat: no-repeat;
+  background-size: contain;
   top: 0;
   left: 0;
   width: 100%;
@@ -224,7 +226,7 @@ h3 {
 .overlay2::before {
   position: absolute;
   content: "";
-  background-color: #001D38;
+  background-image: url(../img/catbg.jpeg) !important;
   top: 0;
   left: 0;
   width: 100%;
@@ -1681,6 +1683,10 @@ h3 {
 .slider_bg_2 {
   background-image: url(../img/banner/banner2.png);
 }
+.slider_bg_1 {
+  background-image: url(../img/Diesel_Generator__Perkins_Generator-removebg-preview.png);
+  background-size: contain !important;
+}
 
 /* line 7, ../../Arafath/CL/Cl November/226. Construction/HTML/scss/_slider.scss */
 .slider_area {
@@ -1720,7 +1726,7 @@ h3 {
 /* line 35, ../../Arafath/CL/Cl November/226. Construction/HTML/scss/_slider.scss */
 .slider_area .single_slider .slider_text h3 {
   font-family: "Raleway", sans-serif;
-  font-size: 60px;
+  font-size: 40px;
   text-transform: uppercase;
   letter-spacing: 2px;
   font-weight: 700;
@@ -1901,7 +1907,7 @@ h3 {
 
 /* line 49, ../../Arafath/CL/Cl November/226. Construction/HTML/scss/_about.scss */
 .about_area .about_info h3 {
-  font-size: 42px;
+  font-size: 28px;
   font-weight: 600;
   color: #040E27;
   line-height: 52px;
@@ -1920,7 +1926,7 @@ h3 {
 @media (min-width: 992px) and (max-width: 1200px) {
   /* line 49, ../../Arafath/CL/Cl November/226. Construction/HTML/scss/_about.scss */
   .about_area .about_info h3 {
-    font-size: 38px;
+    font-size: 40px;
   }
 }
 
@@ -1931,7 +1937,7 @@ h3 {
 
 /* line 66, ../../Arafath/CL/Cl November/226. Construction/HTML/scss/_about.scss */
 .about_area .about_info p.first_para {
-  font-size: 20px;
+  font-size: 15px;
   color: #040E27;
   line-height: 30px;
   margin-top: 18px;
