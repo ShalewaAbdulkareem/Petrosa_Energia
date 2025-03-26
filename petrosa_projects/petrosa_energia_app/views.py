@@ -17,10 +17,12 @@ def index(request):
     featured_projects = Project_name.objects.all().order_by('-id')[:2]
     brands = Brand.objects.all()
     our_service = Service.objects.all()
+    products = Product.objects.all()[:6]
     context = {
         'brands': brands,
         'our_service': our_service,
         'featured_projects': featured_projects,
+        'products': products,
     }
     return render(request, 'index.html', context)
 

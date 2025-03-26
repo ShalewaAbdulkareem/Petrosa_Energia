@@ -205,9 +205,8 @@ h3 {
 .overlay::before {
   position: absolute;
   content: "";
-  background-image: url(../img/catbg.jpeg) !important;
-  background-repeat: no-repeat;
-  background-size: contain;
+ 
+ background-color: black;
   top: 0;
   left: 0;
   width: 100%;
@@ -1292,6 +1291,12 @@ h3 {
   line-height: 1.6;
 }
 
+.feature-section{
+  background-image: url(../img/banner/banner4.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
 
 /* why choose us */
 .chose_us_area {
@@ -1676,17 +1681,17 @@ h3 {
 
 /* line 1, ../../Arafath/CL/Cl November/226. Construction/HTML/scss/_slider.scss */
 .slider_bg_1 {
-  background-image: url(../img/banner/banner.png);
+  background-image: url(../img/banner/banner2.png);
 }
 
 /* line 4, ../../Arafath/CL/Cl November/226. Construction/HTML/scss/_slider.scss */
 .slider_bg_2 {
-  background-image: url(../img/banner/banner2.png);
+  background-image: url(../img/banner/banner5.avif);
 }
-.slider_bg_1 {
+/* .slider_bg_1 {
   background-image: url(../img/Diesel_Generator__Perkins_Generator-removebg-preview.png);
   background-size: contain !important;
-}
+} */
 
 /* line 7, ../../Arafath/CL/Cl November/226. Construction/HTML/scss/_slider.scss */
 .slider_area {
@@ -1911,6 +1916,13 @@ h3 {
   font-weight: 600;
   color: #040E27;
   line-height: 52px;
+}
+.about_area .about_info h1 {
+  font-size: 35px;
+  font-weight: 800;
+  color: #040E27;
+  line-height: 52px;
+  text-transform: uppercase;
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
@@ -2639,9 +2651,47 @@ h3 {
 
 /* line 4, ../../Arafath/CL/Cl November/226. Construction/HTML/scss/_bradcam.scss */
 .bradcam_bg_2 {
-  background-image: url(../img/banner/bradcam2.png);
+  /* background-image: url(../img/banner/bradcam2.png); */
+  background-image: url(../img/banner/banner6.jpg);
+}
+.abt_bradcam_bg_2 {
+  /* background-image: url(../img/banner/bradcam2.png); */
+  background-image: url(https://images.pexels.com/photos/1181370/pexels-photo-1181370.jpeg?auto=compress&cs=tinysrgb&w=1000);
+}
+.prd_bradcam_bg_2 {
+  /* background-image: url(../img/banner/bradcam2.png); */
+  background-image: url(https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=1000);
+}
+.prj_bradcam_bg_2 {
+  /* background-image: url(../img/banner/bradcam2.png); */
+  background-image: url(https://images.pexels.com/photos/1116035/pexels-photo-1116035.jpeg?auto=compress&cs=tinysrgb&w=1000);
+}
+.true_bradcam_bg_2 {
+  /* background-image: url(../img/banner/bradcam2.png); */
+  background-image: url(https://images.pexels.com/photos/188679/pexels-photo-188679.jpeg?auto=compress&cs=tinysrgb&w=1000);
 }
 
+.submenu {
+  max-height: 400px; 
+    overflow-y: auto; 
+  overflow-x: hidden; 
+  scrollbar-width: thin; 
+  scrollbar-color: #888 #f1f1f1; 
+}
+
+.submenu::-webkit-scrollbar {
+  width: 6px; 
+}
+
+
+.submenu::-webkit-scrollbar-thumb {
+  background: #f9ad00; 
+  border-radius: 10px;
+}
+
+.submenu::-webkit-scrollbar-thumb:hover {
+  background: #f9ad00
+}
 /* line 7, ../../Arafath/CL/Cl November/226. Construction/HTML/scss/_bradcam.scss */
 .bradcam_bg_3 {
   background-image: url(../img/banner/bradcam3.png);
@@ -2661,6 +2711,38 @@ h3 {
   position: relative;
   z-index: 0;
 }
+
+.project_card {
+  position: relative;
+  overflow: hidden;
+}
+
+.project_overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(228, 150, 4, 0.6); /* Dark overlay */
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.4s ease-in-out;
+  text-decoration: none; /* Remove underline */
+}
+
+.project_card:hover .project_overlay {
+  opacity: 1; /* Show overlay on hover */
+}
+
+/* Ensure overlay is clickable */
+.project_overlay:hover {
+  opacity: 1; /* Keeps overlay visible while hovering */
+}
+
 
 @media (min-width: 768px) and (max-width: 991px) {
   /* line 13, ../../Arafath/CL/Cl November/226. Construction/HTML/scss/_bradcam.scss */

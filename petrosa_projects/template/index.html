@@ -8,13 +8,7 @@
 
 {% block content %}
 <style>
-    /* Section with background image */
-    .section {
-      background-image: url('your-image-url.jpg'); /* Replace with your image URL */
-      background-size: cover; /* Ensure the image covers the entire section */
-      background-position: center; /* Center the image */
-      padding: 50px 20px; /* Add padding for spacing */
-    }
+   
     
     /* Adjust card size and layout */
     .card {
@@ -141,6 +135,7 @@
                     </div>
                     <div class="col-xl-6 col-md-6" data-aos="fade-left" data-aos-duration="2000">
                         <div class="about_info">
+                            <h1 data-aos="fade-up" >About Us</h1>
                             <h3 data-aos="fade-up">Welcome to Petrosa Energia Ltd</h3>
                             <p class="first_para">At Petrosa Energia Ltd, we are committed to providing reliable power solutions
                                 and expert services with a focus on quality and innovation,we deliver comprehensive energy solutions
@@ -159,9 +154,11 @@
         </div>
     </div>
     <!-- about_area_end  -->
-    <section class="stats-section" style="background-image: url('{% static "img/cat_bg.jpeg" %}');">
+    <section class="stats-section feature-section">
         <div class="overlay">
-          <h1 class="headline text-center mb-4">Our Features</h1>
+            <div class="slider_text text-center">
+                <h3 class="pt-5 pb-5 text-white" style="font-size: 25px;">Our Features</h3>
+            </div>
           <div class="container">
             <div class="row">
               <!-- Card 1 -->
@@ -251,40 +248,40 @@
 
         </div>
     </div>
-    <!-- service_area_end  -->
 
 <!-- gallery_area-START -->
 <div class="gallery_area py-5">
     <div class="container">
         <div class="gallery_nav text-center mb-5">
             <h3 class="gallery_title font-weight-bold">
-                Take a look at some of our <br> recently completed projects
-            </h3>
+                Take a look at some of our <br>products           
+             </h3>
         </div>
-        <div class="row g-4">
-            {% for project in featured_projects %}
+        <div class="row gx-5 gy-5">
+            {% for product in products %}
             <div class="col-lg-4 col-md-6">
                 <div class="project_card position-relative shadow rounded overflow-hidden">
                     <!-- Project Image -->
-                    <img
-                        src="{{ project.image.url }}"
-                        alt="{{ project.name }}"
-                        class="img-fluid w-100"
-                        style="height: 250px; object-fit: cover;"
-                    />
-                    <!-- Overlay -->
-                    <div class="project_overlay position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center text-white text-center p-3">
-                        <h4 class="mb-2">{{ project.name }}</h4>
-                        <p class="mb-3">{{ project.description|truncatewords:15 }}</p>
-                    </div>
+                    <a href="{% url 'petrosa_energia_app:product_detail' slug=product.slug %}">
+                        <img src="{{ product.show_image1 }}" alt="{{ product.product_name }}"
+                            class="img-fluid w-100"
+                            style="height: 250px; object-fit: cover;"
+                        />
+                    </a>
+                    <!-- Clickable Overlay -->
+                    <a href="{% url 'petrosa_energia_app:product_detail' slug=product.slug %}" 
+                       class="project_overlay position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center text-white text-center p-3">
+                        <h4 class="mb-2 text-white">{{ product.product_name }}</h4>
+                    </a>
                 </div>
+                
             </div>
             {% endfor %}
         </div>
         <!-- More Projects Button -->
         <div class="text-center mt-5">
-            <a href="{% url 'petrosa_energia_app:project' %}"  class="boxed-btn3">
-                View More Projects
+            <a href="{% url 'petrosa_energia_app:products' %}"  class="boxed-btn3">
+                View More Products
             </a>
         </div>
     </div>
