@@ -262,12 +262,12 @@
             <div class="col-lg-4 col-md-6">
                 <div class="project_card position-relative shadow rounded overflow-hidden">
                     <!-- Project Image -->
-                    <a href="{% url 'petrosa_energia_app:product_detail' slug=product.slug %}">
+                    
                         <img src="{{ product.show_image1 }}" alt="{{ product.product_name }}"
                             class="img-fluid w-100"
                             style="height: 250px; object-fit: cover;"
                         />
-                    </a>
+                  
                     <!-- Clickable Overlay -->
                     <a href="{% url 'petrosa_energia_app:product_detail' slug=product.slug %}" 
                        class="project_overlay position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center text-white text-center p-3">
@@ -279,11 +279,11 @@
             {% endfor %}
         </div>
         <!-- More Projects Button -->
-        <div class="text-center mt-5">
+        <!-- <div class="text-center mt-5">
             <a href="{% url 'petrosa_energia_app:products' %}"  class="boxed-btn3">
                 View More Products
             </a>
-        </div>
+        </div> -->
     </div>
 </div>
 <!-- gallery_area-END -->
